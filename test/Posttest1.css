@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('../home/sky.jpg');
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+}
+
+h1 {
+    /* font-size: 20px; */
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(104, 104, 104, 0.948);
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    background-color: rgb(77, 189, 245);
+    border: #ff8ff9;
+    border-radius: 8px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+p {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    margin-left: 250px;
+    padding: 10px 20px;
+    background-color: rgb(77, 189, 245);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(77, 189, 245);
+    border: #ff8ff9;
+    border-radius: 8px;
+}
+
+#button1 {
+    color: #000;
+    margin-left: 800px;
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+/* .button1 {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    margin-left: 250px;
+    padding: 10px 20px;
+    background-color: rgb(77, 189, 245);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} */

@@ -1,0 +1,120 @@
+:root {
+    --primary: #DD946F;
+    --secondary: #261E5A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(homepage.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 13%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    font-weight: 600;
+    position: relative;
+    font-size: 25px;
+    color: #ffffff;
+    border-radius: 10px;
+    /* background: #ffbbbb; */
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f8f7f7;
+    bottom: -5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.navbar a:hover:after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    transition: all 1.5s ease;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    padding: 0;
+}
+
+button span {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 17px;
+    border-radius: 20px;
+    background: #ffffff10;
+    backdrop-filter: blur(20px);
+    transition: 0.4s ease-in-out;
+    transition-property: color;
+    height: 100%;
+    width: 100%;
+}
+
+button span:hover {
+    backdrop-filter: blur(0px);
+    color: #ffffff;
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topic {
+    margin-bottom: 20px;
+    /* ระยะห่างของ div.topic กับ div.test */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Background with slight transparency */
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.test {
+    margin-top: 20px;
+    /* ระยะห่างของ div.test จาก div.topic */
+}

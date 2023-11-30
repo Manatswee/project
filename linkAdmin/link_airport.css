@@ -1,0 +1,157 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../home/sky.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.slide-content {
+    margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.card {
+    width: 400px;
+    height: 600px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+
+/* .name {
+    font-size: 20px;
+    font-weight: 600px;
+} */
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f9a2a1;
+    border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #f9a2a1;
+}
+
+.overlay::after {
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+
+.card-image {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f9a2a1;
+}
+
+.name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+}
+
+.description {
+    font-size: 16px;
+    color: #6b45e8;
+    text-align: center;
+    font-weight: 600;
+}
+
+button {
+    color: #000000;
+    margin-left: 30px;
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    background: #efeded;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+/* button {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    margin-left: 250px;
+    padding: 10px 20px;
+    background-color: rgb(118, 118, 118);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+
+/* button {
+    margin-left: 30px;
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+} */
