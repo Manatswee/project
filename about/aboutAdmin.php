@@ -43,6 +43,7 @@
                                     echo "<p><span style='font-weight: bold;'>Name :</span><br><br> " . $userData['Name'] . "</p>";
                                     echo "<p><span style='font-weight: bold;'>Surname :</span><br><br> " . $userData['Last_Name'] . "</p>";
                                     echo "<p><span style='font-weight: bold;'>E-mail Address :</span><br><br> " . $userData['Email'] . "</p>";
+                                    echo "<p><span style='font-weight: bold;'>Passwords :</span><br><br> " . $userData['Passwords'] . "</p>";
                                     echo "<p><span style='font-weight: bold;'>Status :</span><br><br> " . $userData['Status'] . "</p>";
 
                                     // You can display other user data as needed
@@ -66,6 +67,7 @@
                                         echo "<p><span style='font-weight: bold;'>Name :</span><br><br> " . $admin1Data['Name'] . "</p>";
                                         echo "<p><span style='font-weight: bold;'>Surname :</span><br><br> " . $admin1Data['Last_Name'] . "</p>";
                                         echo "<p><span style='font-weight: bold;'>E-mail Address :</span><br><br> " . $admin1Data['Email'] . "</p>";
+                                        echo "<p><span style='font-weight: bold;'>Passwords :</span><br><br> " . $admin1Data['Passwords'] . "</p>";
                                         echo "<p><span style='font-weight: bold;'>Status :</span><br><br> " . $admin1Data['Status'] . "</p>";
     
                                         // You can display other admin1 data as needed

@@ -1,8 +1,12 @@
 // รับองค์ประกอบของฟอร์ม
 const quizForm = document.getElementById('quiz-form');
+const nextButton = document.getElementById('button1'); // รับปุ่ม Next
 
 // กำหนดคำตอบที่ถูกต้อง
 const correctAnswers = ['3', '3', '2', '3'];
+
+// ตรวจสอบว่ามีการกด submit และแสดงผลคะแนนแล้วหรือไม่
+let isSubmitted = false;
 
 // จัดการการส่งฟอร์มแบบทดสอบ
 quizForm.addEventListener('submit', function(e) {
@@ -29,6 +33,12 @@ quizForm.addEventListener('submit', function(e) {
     // แสดงผลลัพธ์
     const resultContainer = document.getElementById('result');
     resultContainer.innerHTML = `<p>คะแนนของคุณ: ${score} / ${correctAnswers.length}</p>`;
+
+    // แสดงปุ่ม "Next"
+    nextButton.style.display = 'block';
+
+    // กำหนดให้มีการกด submit แล้ว
+    isSubmitted = true;
 });
 
 // ฟังก์ชันเพื่อตรวจสอบว่าทุกข้อถูกต้อง
@@ -48,3 +58,15 @@ function getUserAnswers() {
         quizForm.q4.value
     ];
 }
+
+// ฟังก์ชันเพื่อตรวจสอบว่ามีการกด submit และแสดงผลคะแนนแล้วหรือไม่
+nextButton.addEventListener('click', function() {
+    if (!isSubmitted) {
+        alert("กรุณากด submit ก่อนที่จะกด Next");
+        return;
+    }
+
+    // ทำการ redirect หรือทำการปิดแบบทดสอบ (ตามที่คุณต้องการ)
+    // ตัวอย่างเช่น redirect ไปที่หน้าถัดไป
+    window.location.href = "home_tourist4.html";
+});

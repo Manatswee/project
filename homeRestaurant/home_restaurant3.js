@@ -68,5 +68,5 @@ nextButton.addEventListener('click', function() {
 
     // ทำการ redirect หรือทำการปิดแบบทดสอบ (ตามที่คุณต้องการ)
     // ตัวอย่างเช่น redirect ไปที่หน้าถัดไป
-    window.location.href = "home_airport4.html";
+    window.location.href = "home_restaurant4.html";
 });

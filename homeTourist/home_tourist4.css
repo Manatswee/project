@@ -9,6 +9,14 @@ h1 {
     color: #fff;
 }
 
+
+/* *กดปุ่มครั้งที่ 1 เพื่อฟังเสียงคู่สนทนา กดปุ่มเดิม ครั้งที่ 2 เพื่อหยุดเสียงคู่สนทนา */
+
+h {
+    color: #ff0000;
+    font-size: small;
+}
+
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
@@ -91,7 +99,7 @@ body {
 
 .article-preview {
     padding: 24px;
-    height: 1100px;
+    height: 1170px;
     background: white;
 }
 
