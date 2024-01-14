@@ -1,3 +1,31 @@
+
+<?php
+session_start();
+
+$loggedInEmail = "";
+
+if (isset($_SESSION['email'])) {
+    $loggedInEmail = $_SESSION['email'];
+
+    // Database connection 
+    $con = new mysqli("localhost", "root", "", "web");
+
+    if ($con->connect_error) {
+        die("Failed to connect: " . $con->connect_error);
+    } else {
+        // Prepare SQL statement to retrieve user data based on the logged-in email
+        $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt->bind_param("s", $loggedInEmail);
+        $stmt->execute();
+        $user_result = $stmt->get_result();
+    }
+} else {
+    // Redirect to login page if not logged in
+    header("Location: ../login/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

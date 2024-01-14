@@ -5,41 +5,32 @@
     $passwords = $_POST['passwords'];
     $confirm_passwords = $_POST['confirm_passwords'];
     $status = $_POST['status'];
-    
-    
 
-
-
-    //Database commection
-
-    $conn = new mysqli('localhost', 'root', '','web');
-    if($conn->connect_error){
-        die('Connevtion Failed : '.$conn->connect_error);
-        
-    }else{
-        // ตรวจสอบว่ามีข้อมูลซ้ำในฐานข้อมูลหรือไม่
+    // Database connection
+    $conn = new mysqli('localhost', 'root', '', 'web');
+    if ($conn->connect_error) {
+        die('Connection Failed: ' . $conn->connect_error);
+    } else {
+        // Check if there is duplicate data in the database
         $checkDuplicateQuery = $conn->prepare("SELECT * FROM user WHERE Email = ?");
         $checkDuplicateQuery->bind_param("s", $email);
         $checkDuplicateQuery->execute();
         $result = $checkDuplicateQuery->get_result();
-    
-        if($result->num_rows > 0) {
-            // ถ้ามีข้อมูลซ้ำ
-            echo "Register Duplicate entry  (ลงทะเบียนรายการซ้ำ)  .......";
-            
+
+        if ($result->num_rows > 0) {
+            // If duplicate data found
+            echo '<script>alert("Register Duplicate entry  (ลงทะเบียนรายการซ้ำ)  ......."); window.location.href = "register.html";</script>';
         } else {
-            // ถ้าไม่มีข้อมูลซ้ำในฐานข้อมูล
+            // If no duplicate data in the database
             $stmt = $conn->prepare("INSERT INTO user (Name, Last_Name, Email, Passwords, Confirm_Passwords, Status) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssss", $firstName, $lastName, $email, $passwords, $confirm_passwords, $status );
+            $stmt->bind_param("ssssss", $firstName, $lastName, $email, $passwords, $confirm_passwords, $status);
             $stmt->execute();
-            // echo "Register Successfully...";
-            header("Location: login.html");
+            echo '<script>alert("Register Successfully..."); window.location.href = "register.html";</script>';
             $stmt->close();
         }
-        
-        // ปิดการเชื่อมต่อและสร้าง statement
+
+        // Close the database connection and statement
         $checkDuplicateQuery->close();
         $conn->close();
     }
-    
 ?>

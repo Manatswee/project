@@ -30,10 +30,10 @@ quizForm.addEventListener('submit', function(e) {
             score += 1;
         }
     });
-
     // แสดงผลลัพธ์
     const resultContainer = document.getElementById('result');
     resultContainer.innerHTML = `<p>คะแนนของคุณ: ${score} / ${correctAnswers.length}</p>`;
+
 
     // แสดงปุ่ม Finish
     const finishButton = document.getElementById('button1');

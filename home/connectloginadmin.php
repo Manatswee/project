@@ -36,14 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit();
                 } else {
                     // If not admin, redirect to admin.html
-                    echo "<h2>Sorry, you do not have permission to access this page.</h2>";
+                    echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "loginadmin.html";</script>';
                     exit();
                 }
             } else {
-                echo "<h2>E-mail หรือ Password ไม่ถูกต้อง</h2>";
+                echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "loginadmin.html";</script>';
             }
         } else {
-            echo "<h2>E-mail หรือ Password ไม่ถูกต้อง</h2>";
+            echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "loginadmin.html";</script>';
         }
 
         // Close the statement and database connection

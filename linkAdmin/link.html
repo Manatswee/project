@@ -1,3 +1,39 @@
+<!-- <?php
+session_start();
+
+$loggedInEmail = "";
+
+if (isset($_SESSION['email'])) {
+    $loggedInEmail = $_SESSION['email'];
+
+    // Database connection 
+    $con = new mysqli("localhost", "root", "", "web");
+
+    if ($con->connect_error) {
+        die("Failed to connect: " . $con->connect_error);
+    } else {
+        // Prepare SQL statement to retrieve user data based on the logged-in email
+        $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt->bind_param("s", $loggedInEmail);
+        $stmt->execute();
+        $user_result = $stmt->get_result();
+        if ($user_result->num_rows > 0) {
+            $userData = $user_result->fetch_assoc();
+        } 
+        // Add a check for the user role or any other criteria if necessary
+        else {
+            // Redirect to the login page if the user is not authorized
+            header("Location: ../home/login.html");
+            exit();
+        }
+    }
+} else {
+    // Redirect to the login page if the user is not logged in
+    header("Location: ../home/login.html");
+    exit();
+}
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +62,7 @@
                     <div class="article-preview">
                         <h2>At the <br> Airport</h2>
                         <p>
-                            - Transportation to Chumphon city center <br> - Price of transportation
+                            Transportation to Chumphon city center
                             <a href="link_airport.html" class="read-more" title="อ่านเพิ่มเติม">
                                 Read More
                                 </a>

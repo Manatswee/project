@@ -18,11 +18,13 @@
                         <img src="about.jpg" alt="Preview">
                     </figure>
                     <div class="article-preview">
+
                         <?php
                         session_start();
                     
                         if (isset($_SESSION['email'])) {
                             $loggedInEmail = $_SESSION['email'];
+                            
                     
                             // Database connection 
                             $con = new mysqli("localhost", "root", "", "web");
@@ -82,7 +84,8 @@
                                 $con->close();
                             }
                         } else {
-                            echo "<h2>กรุณาเข้าสู่ระบบก่อนทำการเข้าถึงหน้านี้</h2>";
+                            header("Location: ../home/login.html");
+                            exit();
                         }
                         ?>
                 </article>
@@ -93,7 +96,7 @@
 
     </form>
 
-    <form action="../home/home.html">
+    <form action="../home/home.php">
         <br><button>Back</button><br><br>
     </form>
 </body>

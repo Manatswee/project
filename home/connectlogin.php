@@ -31,19 +31,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['expire_time'] = time() + 600; // เซสชั่นจะหมดอายุใน 10 นาที (600 วินาที)
 
                 if ($email === "admin@gmail.com") {
-                    // If admin, redirect to table.html
-                    header("Location:homeAdmin.html");
+                    // If admin, redirect to homeAdmin.php
+                    header("Location: homeAdmin.html");
                     exit();
                 } else {
-                    // If not admin, redirect to home.html
-                    header("Location:homepage.html");
+                    // If not admin, redirect to homepage.php
+                    header("Location: homepage.php");
                     exit();
                 }
+                
             } else {
-                echo "<h2>E-mail หรือ Password ไม่ถูกต้อง</h2>";
+                // Show an alert if email or password is incorrect using JavaScript
+                echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "login.html";</script>';
             }
         } else {
-            echo "<h2>E-mail หรือ Password ไม่ถูกต้อง</h2>";
+            // Show an alert if email or password is incorrect using JavaScript
+            echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "login.html";</script>';
         }
 
         // Close the statement and database connection
