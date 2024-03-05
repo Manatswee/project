@@ -70,7 +70,7 @@ if (isset($_SESSION['email'])) {
                 </article> -->
                 <article>
                     <figure>
-                        <img src="../image/t1.jpg" alt="Preview">
+                        <img src="../test/test.jpg" alt="Preview">
                     </figure>
                     <div class="article-preview">
                         <h2>Post-Test</h2>

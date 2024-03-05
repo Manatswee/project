@@ -46,7 +46,7 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <h1><br>Presentation</h1>
+    <h1><br>Listen & Learn</h1>
     <form action="home_shopping2.php">
         <div class="centering">
             <div class="articles">

@@ -65,6 +65,36 @@ body {
     opacity: 1;
 }
 
+.navbar1 a {
+    font-weight: 600;
+    position: relative;
+    font-size: 25px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /* เพิ่มระยะห่างด้านล่างของลิงก์ */
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.navbar1 a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    bottom: -5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.navbar1 a:hover:after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .background {
     width: 100%;
     display: flex;

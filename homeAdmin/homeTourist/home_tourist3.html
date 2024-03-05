@@ -47,7 +47,7 @@ if (isset($_SESSION['email'])) {
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const quizForm = document.getElementById('quiz-form');
-            const nextButton = document.getElementById('button1'); // รับปุ่ม Next
+            const nextButton = document.getElementById('button2'); // รับปุ่ม Next
 
             // กำหนดคำตอบที่ถูกต้อง
             const correctAnswers = ['3', '3', '2', '3'];
@@ -123,10 +123,18 @@ if (isset($_SESSION['email'])) {
 
 <body>
     <br><br>
-    <h1>Practice</h1>
+    <!-- <h1>Practice</h1> -->
 
     <div class="quiz-container">
         <h2>Comprehension Question <br>(4 questions 4 multiple choices)</h2>
+
+        <div class="audio-container">
+            <audio id="myAudio" controls>
+                    <source src="../../sound/PresentationU3.mp3" type="audio/mpeg">
+                    <!-- Your browser does not support the audio element. -->
+            </audio>
+        </div>
+
         <form id="quiz-form">
             <p>Question 1: What the information does the tourist need?</p>
             <label>
@@ -186,11 +194,15 @@ if (isset($_SESSION['email'])) {
 
             <br>
             <button type="submit">Submit</button>
+            <button onclick="refreshPage()" type="button3">do it again</button>
+            <div id="result"></div>
+    </div>
 
-            <button id="button1">Next</button>
 
-        </form>
-        <div id="result"></div>
+    <div class="button-container">
+        <a href="home_tourist2.html" id="button1">Back</a>
+        <button formaction="home_tourist4.html" id="button2">Next</button>
+    </div>
 
 
 

@@ -47,7 +47,7 @@ if (isset($_SESSION['email'])) {
 
 <body>
     <h1><br>Practice</h1>
-    <!-- <form action="home_airport5.html"> -->
+    <!-- <form action="home_airport5.php"> -->
     <div class="centering">
         <div class="articles">
             <article>
@@ -63,13 +63,29 @@ if (isset($_SESSION['email'])) {
                     <button id="positionA">Customer Service</button><br><br>
                     <button id="positionB">Tourist</button>
 
-                    <br><br>
-                    <h>*กดปุ่มครั้งที่ 1 เพื่อฟังเสียงคู่สนทนา กดปุ่มเดิม ครั้งที่ 2 เพื่อหยุดเสียงคู่สนทนา</h>
+                    <!-- <br><br>
+                    <h>*กดปุ่มครั้งที่ 1 เพื่อฟังเสียงคู่สนทนา กดปุ่มเดิม ครั้งที่ 2 เพื่อหยุดเสียงคู่สนทนา</h> -->
 
                     <audio id="audioA" src="../sound/U1Tourist.mp3"></audio>
                     <audio id="audioB" src="../sound/U1Customer.mp3"></audio>
+                    <script>
+                        // JavaScript code for controlling audio playback
+                        const audioA = document.getElementById("audioA");
+                        const audioB = document.getElementById("audioB");
 
-                    <script src="home_airport4.js"></script>
+                        document.getElementById("positionA").addEventListener("click", function () {
+                            audioB.pause();
+                            audioA.currentTime = 0;
+                            audioA.play();
+                        });
+
+                        document.getElementById("positionB").addEventListener("click", function () {
+                            audioA.pause();
+                            audioB.currentTime = 0;
+                            audioB.play();
+                        });
+                    </script>
+                    
 
                     <br>
                     <table id="conversationTable">
@@ -140,9 +156,11 @@ if (isset($_SESSION['email'])) {
     </div>
     <br>
     <form action="home_airport5.php">
-        <button id="button1">Next</button><br><br>
+            <div class="button-container">
+                <button formaction="home_airport3.php" id="button1">Back</button>
+                <button>Next</button>
+            </div>
     </form>
-    <!-- </form> -->
 </body>
 
 </html>

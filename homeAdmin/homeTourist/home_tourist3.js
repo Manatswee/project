@@ -70,3 +70,8 @@ nextButton.addEventListener('click', function() {
     // ตัวอย่างเช่น redirect ไปที่หน้าถัดไป
     window.location.href = "home_tourist4.html";
 });
+
+//รีเพื่อทำอีกครั้ง
+function refreshPage() {
+    window.location.reload();
+}

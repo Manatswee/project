@@ -46,7 +46,7 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <h1><br>Presentation</h1>
+    <h1><br>Listen & Learn</h1> 
     <form action="home_airport2.php">
         <div class="centering">
             <div class="articles">
@@ -123,7 +123,7 @@ if (isset($_SESSION['email'])) {
                             <button id="replayButton">เล่นซ้ำ</button>
                         </div>
 
-                        <script src="home_airport1.js"></script>
+                        <!-- <script src="home_airport1.js"></script> -->
                     </div>
                 </article>
 
@@ -133,6 +133,7 @@ if (isset($_SESSION['email'])) {
 
         <br><button>Next</button><br><br>
     </form>
+    
 </body>
 
 </html>

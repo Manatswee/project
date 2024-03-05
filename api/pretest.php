@@ -21,8 +21,9 @@ if ($api == "POST") {
     if (isset($decode_data['user_name']) && isset($decode_data['score_pretest'])) {
         $user_name = $pretest->test_input($decode_data['user_name']);
         $score_pretest = $pretest->test_input($decode_data['score_pretest']);
+        $email = $pretest->test_input($decode_data['email']);
 
-        $pretest->inSert($user_name, $score_pretest);
+        $pretest->inSert($user_name, $score_pretest, $email );
         echo json_encode(array("success" => "Data inserted successfully"));
     } else {
         echo json_encode(array("error" => "Incomplete"));

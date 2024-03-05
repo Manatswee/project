@@ -29,6 +29,12 @@ h2 {
     border-radius: 8px;
 }
 
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 form {
     margin-top: 20px;
 }
@@ -46,21 +52,37 @@ input[type="radio"] {
     margin-right: 5px;
 }
 
-button {
+button[type="submit"],
+button[type="button3"] {
+    /* แก้เป็น type="button3" เพื่อให้เป็นปุ่มที่มี attribute type ชื่อ button3 */
     font-weight: 600;
-    display: block;
+    display: inline-block;
     margin-top: 20px;
-    margin-left: 250px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 20px;
-    background-color: rgb(77, 189, 245);
-    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+button[type="submit"] {
+    background-color: rgb(77, 189, 245);
+    color: #fff;
+}
+
+button[type="button3"] {
+    background-color: rgb(255, 215, 39);
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e00b3;
+}
+
+button[type="button3"]:hover {
+    /* ปุ่ม do it again */
+    background-color: #ea4909;
 }
 
 #result {
@@ -72,31 +94,61 @@ button:hover {
     border-radius: 8px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* จัดให้อยู่กลางตามแนวตั้ง */
+    margin-top: 20px;
+    /* เพิ่มระยะห่างของปุ่มจากเนื้อหาก่อนหน้า */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่างของ .button-container จากเนื้อหาหลังหน้า */
+    margin-left: 150px;
+    /* จัดปุ่ม Back ไปทางซ้าย */
+    margin-right: 150px;
+    /* จัดปุ่ม Next ไปทางขวา */
+}
+
 #button1 {
-    color: #000;
-    margin-left: 800px;
+    text-align: center;
+    /* จัดให้ตัวหนังสืออยู่กึ่งกลางภายในปุ่ม */
+    /* ส่วนของปุ่ม Back */
+    background-color: #ff0000;
+    width: 60px;
+    height: 25px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    /* ลบเส้นใต้ที่ปุ่ม "Back" */
+}
+
+#button2 {
+    text-align: center;
+    /* จัดให้ตัวหนังสืออยู่กึ่งกลางภายในปุ่ม */
+    /* ส่วนของปุ่ม Next */
+    background-color: #4caf50;
     width: 100px;
     height: 40px;
-    border-radius: 40px;
-    background: #ffffff;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    outline: none;
+    border-radius: 40px;
     cursor: pointer;
+    outline: none;
     font-size: 1em;
     font-weight: 600;
 }
 
 
-/* #button1 {
-    color: #000;
-    margin-left: 30px;
-    width: 100px;
-    height: 40px;
-    border-radius: 40px;
-    background: #ffffff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-} */
+/* ปุ่มเล่น หยุด เล่นซ้ำ */
+
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}

@@ -46,7 +46,7 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <h1><br>Presentation</h1>
+    <h1><br>Listen & Learn</h1>
     <form action="home_airport3.php">
         <div class="centering">
             <div class="articles">
@@ -160,8 +160,12 @@ if (isset($_SESSION['email'])) {
 
             </div>
         </div>
-        <br><button>Next</button><br><br>
+        <div class="button-container">
+                <button formaction="home_airport1.php" id="button1">Back</button>
+                <button>Next</button>
+        </div>
     </form>
+    
 </body>
 
 </html>

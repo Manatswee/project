@@ -30,16 +30,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['email'] = $email;
                 $_SESSION['expire_time'] = time() + 600; // เซสชั่นจะหมดอายุใน 10 นาที (600 วินาที)
 
-                if ($email === "admin@gmail.com") {
+                // Check if there is a score for the user
+                $stmt_score = $con->prepare("SELECT email FROM score_pretest WHERE email = ?");
+                $stmt_score->bind_param("s", $email);
+                $stmt_score->execute();
+                $score_login = $stmt_score->get_result();
+
+                // If there is a score for the user, redirect to home.php
+                if ($score_login->num_rows > 0) {
+                    header("Location: home.php");
+                    exit();
+                }
+                else if ($email === "admin@gmail.com") {
                     // If admin, redirect to homeAdmin.php
                     header("Location: homeAdmin.html");
                     exit();
-                } else {
-                    // If not admin, redirect to homepage.php
+                }
+                 else {
                     header("Location: homepage.php");
                     exit();
                 }
-                
             } else {
                 // Show an alert if email or password is incorrect using JavaScript
                 echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "login.html";</script>';
@@ -49,8 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<script>alert("E-mail หรือ Password ไม่ถูกต้อง"); window.location.href = "login.html";</script>';
         }
 
-        // Close the statement and database connection
+        // Close the statements and database connection
         $stmt->close();
+        $stmt_score->close();
         $con->close();
     }
 } else {

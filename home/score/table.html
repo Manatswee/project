@@ -14,10 +14,6 @@
         <div class="table-widget">
 
             <table>
-                <!-- <caption>
-                Score
-                <span class="table-row-count"></span>
-            </caption> -->
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -27,20 +23,81 @@
                         <th>Pre-Test</th>
                         <th>Post-Test</th>
                         <th>Score Prtcentage Increase</th>
-                        <th>Practice / Speaking Test</th>
-                        <!-- <th>Speaking Test</th> -->
+                        <th>Practice</th>
+                        <th>Speaking Test</th>
                     </tr>
                 </thead>
-                <tbody id="team-member-rows">
-                    <!--? rows are generated -->
-
+                <tbody id="tableData">
+                    <!-- ข้อมูลจะถูกเติมที่นี่โดย JavaScript -->
                 </tbody>
+
+                <script>
+                    const apiUrl_userdata = 'http://localhost/Projesct12/api/api-adminscore.php';
+                    fetch(apiUrl_userdata)
+                        .then(response => {
+                            if (response.status === 200) {
+                                console.log('get data apiUrl_userdata successfully');
+                                return response.json();
+                            } else {
+                                throw new Error('get data apiUrl_userdata successfully failed');
+                            }
+                        })
+                        .then(data => {
+                            displayDataInTable(data);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+
+                    // เพิ่มตัวแปรเพื่อติดตามสถานะการคลิก
+                    let click_pratice = 0;
+                    let click_speaking = 0;
+
+                    function displayDataInTable(data) {
+                        const tableBody = document.getElementById('tableData');
+                        // เริ่มต้นใส่ข้อมูลลงในตาราง
+
+                        data.forEach(rowData => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${rowData.Name}</td>
+                                <td>${rowData.Last_Name}</td>
+                                <td>${rowData.Status}</td>
+                                <td>${rowData.Email}</td>
+                                <td>${rowData.score_pretest}</td>
+                                <td>${rowData.score_posttest}</td>
+                                <td>${rowData.score_difference}</td>
+                                <td><a id="practice_link">click</a></td>
+                                <td><a id="speaking_link">click</a></td>
+                            `;
+                            tableBody.appendChild(row);
+
+                            const practiceLink = row.querySelector('#practice_link');
+                            practiceLink.addEventListener('click', function() {
+
+                                if (click_pratice === 0) {
+                                    var name = rowData.Name;
+                                    practiceLink.href = 'table1.html?name=' + encodeURIComponent(name);
+                                }
+                            });
+
+                            const speakingLink = row.querySelector('#speaking_link');
+                            speakingLink.addEventListener('click', function() {
+
+                                if (click_pratice === 0) {
+                                    var name = rowData.Name;
+                                    speakingLink.href = 'table2.html?name=' + encodeURIComponent(name);
+                                }
+                            });
+                        });
+                    }
+                </script>
+
                 <tfoot>
                     <tr>
                         <td colspan="4">
                             <ul class="pagination">
                                 <!--? generated pages -->
-
                             </ul>
                         </td>
                     </tr>

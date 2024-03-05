@@ -55,17 +55,18 @@ if (isset($_SESSION['email'])) {
                     <img src="recreational activities.jpg" alt="Preview">
                 </figure>
                 <div class="article-preview">
-                    <h2>Please response to the question.</h2>
-                    <h3>Record speech immediate response to check confidence.</h3><br>
+                    <h2>Listen and respond to the questions.</h2>
+                    <!-- <h3>Record speech immediate response to check confidence.</h3><br> -->
                     <table>
 
                         <tr>
                             <td class="left">
-                                <h4>Question1:</h4> Where does this conversation take place?
+                                <h4>Question1:</h4>
+                                <!-- Where does this conversation take place? -->
                                 <br><br>
                                 <div class="controls">
                                     <button id="positionA">Play</button>
-                                    <audio id="audioA" src="../sound/ProductionU2Q1.mp3"></audio>
+                                    <audio id="audioA" src="../../sound/ProductionU2Q1.mp3"></audio>
                                 </div>
                             </td>
                         </tr>
@@ -86,11 +87,12 @@ if (isset($_SESSION['email'])) {
 
                         <tr>
                             <td class="left">
-                                <h4>Question2:</h4> What are activities recommendations by the travel agent?
+                                <h4>Question2:</h4>
+                                <!-- What are activities recommendations by the travel agent? -->
                                 <br><br>
                                 <div class="controls">
                                     <button id="positionB">Play</button>
-                                    <audio id="audioB" src="../sound/ProductionU2Q2.mp3"></audio>
+                                    <audio id="audioB" src="../../sound/ProductionU2Q2.mp3"></audio>
                                 </div>
                             </td>
                         </tr>
@@ -109,11 +111,12 @@ if (isset($_SESSION['email'])) {
 
                         <tr>
                             <td class="left">
-                                <h4>Question3:</h4> Does the tourist interested in doing kayaking right away?
+                                <h4>Question3:</h4>
+                                <!-- Does the tourist interested in doing kayaking right away? -->
                                 <br><br>
                                 <div class="controls">
                                     <button id="positionC">Play</button>
-                                    <audio id="audioC" src="../sound/ProductionU2Q3.mp3"></audio>
+                                    <audio id="audioC" src="../../sound/ProductionU2Q3.mp3"></audio>
                                 </div>
                             </td>
                         </tr>
@@ -133,11 +136,12 @@ if (isset($_SESSION['email'])) {
 
                         <tr>
                             <td class="left">
-                                <h4>Question4:</h4> How much does the kayaking package cost?
+                                <h4>Question4:</h4>
+                                <!-- How much does the kayaking package cost? -->
                                 <br><br>
                                 <div class="controls">
                                     <button id="positionD">Play</button>
-                                    <audio id="audioD" src="../sound/ProductionU2Q4.mp3"></audio>
+                                    <audio id="audioD" src="../../sound/ProductionU2Q4.mp3"></audio>
                                 </div>
                             </td>
                         </tr>
@@ -173,10 +177,15 @@ if (isset($_SESSION['email'])) {
         </div>
     </div>
 
-    <form action="../../home/homeAdmin.html">
-        <button id="button1">Finish</button><br><br>
-    </form>
-    <!-- </form> -->
+    <div class="button-container">
+        <form action="home_recreational4.html" method="get">
+            <button type="submit" id="button1">Back</button>
+        </form>
+        <form action="../../home/homeAdmin.html" method="get">
+            <button type="submit" id="button">Finish</button>
+        </form>
+    </div>
+
 </body>
 
 </html>

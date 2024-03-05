@@ -10,41 +10,74 @@
 
 <body>
     <div class="background">
-        <h1><br>Score</h1>
+        <h1><br>Practice</h1>
         <div class="table-widget">
 
             <table>
-                <!-- <caption>
-                Score
-                <span class="table-row-count"></span>
-            </caption> -->
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Surname</th>
-                        <th>Status</th>
-                        <th>Units</th>
-                        <th>Practice</th>
-                        <th>Speaking Test</th>
+                        <th>Units1</th>
+                        <th>Units2</th>
+                        <th>Units3</th>
+                        <th>Units4</th>
+                        <th>Date Time</th>
                     </tr>
                 </thead>
-                <tbody id="team-member-rows">
-                    <!--? rows are generated -->
+                <tbody id="practiceTable">
+                    <!-- Rows will be generated here -->
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4">
-                            <ul class="pagination">
-                                <!--? generated pages -->
-
-                            </ul>
-                        </td>
-                    </tr>
-                </tfoot>
             </table>
         </div>
     </div>
-    <script src="table1.css"></script>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const name = urlParams.get('name');
+        console.log(name);
+
+        const apiUrl_score_practice = 'http://localhost/Projesct12/api/api-scorepractice.php';
+        fetch(apiUrl_score_practice)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log('get data apiUrl_score_practice successfully');
+                    return response.json();
+                } else {
+                    throw new Error('get data apiUrl_score_practice successfully failed');
+                }
+            })
+            .then(data => {
+                displayDataPractice(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        function displayDataPractice(data) {
+            const tableBody = document.getElementById('practiceTable');
+            data.forEach(item => {
+                if (item.user_name === name) {
+                    console.log(item);
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.user_name}</td>
+                        <td>${item.unit_test1}</td>
+                        <td>${item.unit_test2}</td>
+                        <td>${item.unit_test3}</td>
+                        <td>${item.unit_test4}</td>
+                        <td>${item.time_stamp}</td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            });
+        }
+    </script>
+
+    <footer>
+        <ul class="pagination">
+            <!-- Generated pages -->
+        </ul>
+    </footer>
 </body>
 
 </html>

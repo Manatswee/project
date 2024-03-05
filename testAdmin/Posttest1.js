@@ -2,7 +2,7 @@
 const quizForm = document.getElementById('quiz-form2');
 
 // กำหนดคำตอบที่ถูกต้อง
-const correctAnswers = ['2', '3', '1', '1', '3', '1', '2', '3', '3', '2', '3', '1', '1', '1', '2', '1', '3', '1', '2', '1'];
+const correctAnswers = ['4', '1', '2', '2', '2', '4', '2', '3', '3', '1', '2', '4', '4', '3', '4', '2', '2', '2', '2', '2'];
 
 // จัดการการส่งฟอร์มแบบทดสอบ
 quizForm.addEventListener('submit', function(e) {

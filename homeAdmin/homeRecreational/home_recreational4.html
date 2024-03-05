@@ -66,8 +66,8 @@ if (isset($_SESSION['email'])) {
                     <br><br>
                     <h>*กดปุ่มครั้งที่ 1 เพื่อฟังเสียงคู่สนทนา กดปุ่มเดิม ครั้งที่ 2 เพื่อหยุดเสียงคู่สนทนา</h>
 
-                    <audio id="audioA" src="../sound/U2Tourist.mp3"></audio>
-                    <audio id="audioB" src="../sound/U2Tour_agent.mp3"></audio>
+                    <audio id="audioA" src="../../sound/U2Tourist.mp3"></audio>
+                    <audio id="audioB" src="../../sound/U2Tour_agent.mp3"></audio>
 
                     <script src="home_recreational3.js"></script>
 
@@ -162,7 +162,10 @@ if (isset($_SESSION['email'])) {
     </div>
     <br>
     <form action="home_recreational5.html">
-        <button id="button1">Next</button><br><br>
+        <div class="button-container">
+            <button formaction="home_recreational3.html" id="button1">Back</button>
+            <button>Next</button>
+        </div>
     </form>
     <!-- </form> -->
 </body>

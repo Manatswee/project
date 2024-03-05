@@ -19,7 +19,10 @@ if (isset($_SESSION['email'])) {
         $user_result = $stmt->get_result();
         if ($user_result->num_rows > 0) {
             $userData = $user_result->fetch_assoc();
-            
+            // ส่งข้อมูลไปยัง JavaScript โดยใช้ echo
+            echo '<script>';
+            echo 'const userData = ' . json_encode($userData['Name']) . ';';
+            echo '</script>';
         } 
         // Add a check for the user role or any other criteria if necessary
         else {
@@ -34,6 +37,7 @@ if (isset($_SESSION['email'])) {
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,13 +53,62 @@ if (isset($_SESSION['email'])) {
             <!-- <form action="session.php" method="post"> -->
 
             <a href="home.php">Home</a>
-            <a href="../test/Posttest.php">Test</a>
+            <!-- <a href="../test/Posttest.php">Test</a> -->
+            <a href="#" onclick="checkCondition()">Test</a>
+
+            <script>
+                let name;
+                fetch('http://localhost/Projesct12/api/api-UserName.php', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    name = data;
+                    console.log(name);
+                    
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+
+                function checkCondition() {
+                    let userFound = false;
+
+                    name.forEach(item => {
+                        if (item.user_name === userData) {
+                            window.location.href = '../test/Posttest.php';
+                            userFound = true;
+                        }
+                    });
+
+                    if (!userFound) {
+                        alert('กรุณาศึกษาให้ครบทุกบทก่อนทำแบบทดสอบ');
+                    }
+                }
+
+            </script>
+
+
             <a href="../link/link.php">Link</a>
-            <a href="../about/about.php">About</a>
-            <a href="logout.php">Logout</a>
+            <!-- <a href="../about/about.php">About</a>
+            <a href="logout.php">Logout</a> -->
             <!-- <a href="loginadmin.html">Admin</a> -->
 
             <!-- </form> -->
+        </nav>
+        <nav class="navbar1">
+            <br><br>
+            <a href="../about/about.php">About</a>
+            <a href="logout.php">Logout</a>
+
         </nav>
     </header>
 
@@ -69,7 +122,7 @@ if (isset($_SESSION['email'])) {
 
                 <article>
                     <figure>
-                        <img src="../image/shopping.jpg" alt="Preview">
+                        <img src="../homeAirport/airport.jpg" alt= "Preview">
                     </figure>
                     <div class="article-preview">
                         <h2>At the <br> Airport</h2>
