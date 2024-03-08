@@ -5,11 +5,11 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 header("Content-Type: application/json");
 
 require_once("../db.php");
-$unittest5 = new ScoreUnittest5();
+$unit_restaurant = new ScoreUnittestRestaurant();
 
 $api = $_SERVER["REQUEST_METHOD"];
 if ($api == "GET"){
-    $data = $unittest5->fetchAll();
+    $data = $unit_restaurant->fetchAll();
     echo json_encode($data);
 }
 
@@ -18,11 +18,11 @@ if ($api == "POST") {
     $decode_data = json_decode($raw_data, true);
 
     error_log(print_r($decode_data, true));
-    if (isset($decode_data['user_name']) && isset($decode_data['unit_test5'])) {
-        $user_name = $unittest5->test_input($decode_data['user_name']);
-        $unit_test5 = $unittest5->test_input($decode_data['unit_test5']);
+    if (isset($decode_data['username']) && isset($decode_data['score'])) {
+        $username = $unit_restaurant->test_input($decode_data['username']);
+        $score_restaurant = $unit_restaurant->test_input($decode_data['score']);
 
-        $unittest5->inSert($user_name, $unit_test5);
+        $unit_restaurant->inSert($username, $score_restaurant);
         echo json_encode(array("success" => "Data inserted successfully"));
     } else {
         echo json_encode(array("error" => "Incomplete"));

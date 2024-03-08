@@ -44,11 +44,11 @@ body {
     text-align: left;
     /* กำหนดการสกอร์ตามแนวแกน x และพยายามจับของยึดตามจุด snap เสมอ */
     scroll-snap-type: y mandatory;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .table-widget table {
-    width: 100%;
+    width: 800px;
     border-collapse: collapse;
 }
 
@@ -86,6 +86,8 @@ body {
     padding: 20px 16px;
     font-size: 0.875rem;
     color: var(--gray);
+    width: 25%;
+    /* เพิ่มเพื่อกำหนดความกว้างของคอลัมน์ให้เท่ากับ 25% ของตาราง */
 }
 
 .table-widget thead {
@@ -100,6 +102,8 @@ body {
 .table-widget td {
     padding: 8px 16px;
     vertical-align: middle;
+    width: 25%;
+    /* เพิ่มเพื่อกำหนดความกว้างของคอลัมน์ให้เท่ากับ 25% ของตาราง */
 }
 
 .table-widget tbody tr {

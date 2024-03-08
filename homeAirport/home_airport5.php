@@ -199,6 +199,7 @@ if (isset($_SESSION['email'])) {
 
                 let isPlaying = false;
 
+                
                 // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง A
                 buttonA.addEventListener('click', () => {
                     if (!isPlaying) {
@@ -355,7 +356,7 @@ if (isset($_SESSION['email'])) {
                 const maxScore = 4; // คะแนนเต็ม
 
 
-                // รหัสอื่น ๆ ที่มีอยู่
+                
 
                 // เพิ่มฟังก์ชันเพื่อเช็คคีย์เวิร์ด
                 function checkKeywords(transcript) {
@@ -381,30 +382,32 @@ if (isset($_SESSION['email'])) {
                     const foundKeywords2 = checkKeywords(output2.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition2 (output2)
                     const foundKeywords3 = checkKeywords(output3.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition3 (output3)
                     const foundKeywords4 = checkKeywords(output4.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition4 (output4)
+                    const keyword1 = output1.innerHTML;
+                    console.log(recognition1)
 
                     const totalScore = foundKeywords1 + foundKeywords2 + foundKeywords3 + foundKeywords4;
-                    console.log(output1)
-                    console.log(output1.innerHTML)
                     if (totalScore > 0) {
                         // แสดงคะแนนเมื่อพบคำหรือประโยคที่ต้องการตรวจสอบและตอบถูก
                         scoreDisplay.innerText = `คะแนน: ${totalScore} คะแนน`;
                         alert(`คะแนนที่คุณได้คือ: ${totalScore} คะแนน`);
-                    } else {
+                    } else if (totalScore == 0){
                         // แสดงข้อความเมื่อไม่พบคำหรือประโยคที่ต้องการตรวจสอบหรือตอบถูก
                         scoreDisplay.innerText = 'คะแนน: 0 คะแนน';
                         alert('คุณไม่ได้รับคะแนน');
+                    } else {
+                        alert('โปรดตอบครบทุกข้อก่อนกด Submit');
                     }
                     // URL ของ API
-                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-production1.php';
+                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-productionairport.php';
 
                     // ข้อมูลที่ต้องการบันทึก
                     const postData = {
-                        user_name: userData,
-                        production_1: output1.innerHTML,
-                        production_1_2: output2.innerHTML,
-                        production_1_3: output3.innerHTML,
-                        production_1_4: output4.innerHTML,
-                        score_1: totalScore,
+                        username: userData,
+                        word_1: output1.innerHTML,
+                        word_2: output2.innerHTML,
+                        word_3: output3.innerHTML,
+                        word_4: output4.innerHTML,
+                        score: totalScore,
                     };
                     // ใช้ fetch() เพื่อทำการ POST ข้อมูล
                     fetch(apiUrl_saveData, {
@@ -434,6 +437,8 @@ if (isset($_SESSION['email'])) {
                         });
                 });
                 
+
+
                 // รับอ้างอิงไปยังปุ่ม
                 const backButton = document.getElementById('button1');
                 const finishButton = document.getElementById('button');

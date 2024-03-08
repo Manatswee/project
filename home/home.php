@@ -83,14 +83,14 @@ if (isset($_SESSION['email'])) {
                     let userFound = false;
 
                     name.forEach(item => {
-                        if (item.user_name === userData) {
+                        if (item.username === userData) {
                             window.location.href = '../test/Posttest.php';
                             userFound = true;
                         }
                     });
 
                     if (!userFound) {
-                        alert('กรุณาศึกษาให้ครบทุกบทก่อนทำแบบทดสอบ');
+                        alert('กรุณาศึกษาให้ครบทุกบทก่อนทำแบบทดสอบหลังเรียน');
                     }
                 }
 

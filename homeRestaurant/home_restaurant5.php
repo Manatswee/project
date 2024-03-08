@@ -398,16 +398,16 @@ if (isset($_SESSION['email'])) {
                         alert('คุณไม่ได้รับคะแนน');
                     }
                     // URL ของ API
-                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-production5.php';
+                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-productionrestaurant.php';
 
                     // ข้อมูลที่ต้องการบันทึก
                     const postData = {
-                        user_name: userData,
-                        production_5: output1.innerHTML,
-                        production_5_2: output2.innerHTML,
-                        production_5_3: output3.innerHTML,
-                        production_5_4: output4.innerHTML,
-                        score_5: totalScore,
+                        username: userData,
+                        word_1: output1.innerHTML,
+                        word_2: output2.innerHTML,
+                        word_3: output3.innerHTML,
+                        word_4: output4.innerHTML,
+                        score: totalScore,
                     };
                     // ใช้ fetch() เพื่อทำการ POST ข้อมูล
                     fetch(apiUrl_saveData, {
@@ -418,7 +418,7 @@ if (isset($_SESSION['email'])) {
                             body: JSON.stringify(postData),
                         })
                         .then(response => {
-                            if (response.status === 201) {
+                            if (response.status === 200) {
                                 // กระบวนการบันทึกข้อมูลสำเร็จ
                                 console.log('Data saved successfully');
                                 return response.json();
@@ -426,10 +426,6 @@ if (isset($_SESSION['email'])) {
                                 // กระบวนการบันทึกข้อมูลไม่สำเร็จ
                                 throw new Error('Data not saved');
                             }
-                        })
-                        .then(data => {
-                            // ดึงข้อมูลจากการบันทึกสำเร็จ
-                            console.log('Data:', data);
                         })
                         .catch(error => {
                             // หากเกิดข้อผิดพลาดในการบันทึก

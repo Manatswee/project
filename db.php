@@ -36,82 +36,82 @@
         }
 
     }
-    class ScoreUnittest1 extends Config {
+    class ScoreUnittestAirport extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM unit_test1";
+            $sql = "SELECT * FROM unit_test_airport";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $unit_test1){
-            $sql = "INSERT INTO unit_test1(user_name, unit_test1) VALUES(:user_name, :unit_test1)";
+        public function inSert($username, $score_airport){
+            $sql = "INSERT INTO unit_test_airport(username, score) VALUES(:username, :score_airport)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "unit_test1" => $unit_test1]);
+            $stmt->execute(["username" => $username, "score_airport" => $score_airport]);
             return true;
         }
 
     }
-    class ScoreUnittest2 extends Config {
+    class ScoreUnittestActivities extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM unit_test2";
+            $sql = "SELECT * FROM unit_test_activities";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $unit_test2){
-            $sql = "INSERT INTO unit_test2(user_name, unit_test2) VALUES(:user_name, :unit_test2)";
+        public function inSert($username, $score_activities){
+            $sql = "INSERT INTO unit_test_activities(username, score) VALUES(:username, :score_activities)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "unit_test2" => $unit_test2]);
+            $stmt->execute(["username" => $username, "score_activities" => $score_activities]);
             return true;
         }
 
     }
-    class ScoreUnittest3 extends Config {
+    class ScoreUnittestTourist extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM unit_test3";
+            $sql = "SELECT * FROM unit_test_tourist";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $unit_test3){
-            $sql = "INSERT INTO unit_test3(user_name, unit_test3) VALUES(:user_name, :unit_test3)";
+        public function inSert($username, $score_tourist){
+            $sql = "INSERT INTO unit_test_tourist(username, score) VALUES(:username, :score_tourist)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "unit_test3" => $unit_test3]);
+            $stmt->execute(["username" => $username, "score_tourist" => $score_tourist]);
             return true;
         }
 
     }
-    class ScoreUnittest4 extends Config {
+    class ScoreUnittestShopping extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM unit_test4";
+            $sql = "SELECT * FROM unit_test_shopping";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $unit_test4){
-            $sql = "INSERT INTO unit_test4(user_name, unit_test4) VALUES(:user_name, :unit_test4)";
+        public function inSert($username, $score_shopping){
+            $sql = "INSERT INTO unit_test_shopping(username, score) VALUES(:username, :score_shopping)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "unit_test4" => $unit_test4]);
+            $stmt->execute(["username" => $username, "score_shopping" => $score_shopping]);
             return true;
         }
 
     }
-    class ScoreUnittest5 extends Config {
+    class ScoreUnittestRestaurant extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM unit_test5";
+            $sql = "SELECT * FROM unit_test_restaurant";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $unit_test5){
-            $sql = "INSERT INTO unit_test5(user_name, unit_test5) VALUES(:user_name, :unit_test5)";
+        public function inSert($username, $score_restaurant){
+            $sql = "INSERT INTO unit_test_restaurant(username, score) VALUES(:username, :score_restaurant)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "unit_test5" => $unit_test5]);
+            $stmt->execute(["username" => $username, "score_restaurant" => $score_restaurant]);
             return true;
         }
 
@@ -133,91 +133,112 @@
 
     }
     
-    class Production1 extends Config {
+    class ScoreProductionAirport extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM production_1";
+            $sql = "SELECT * FROM production_airport";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $production_1, $production_1_2, $production_1_3, $production_1_4, $score_1){
-            $sql = "INSERT INTO production_1(user_name, production_1, production_1_2, production_1_3, production_1_4, score_1) VALUES(:user_name, :production_1, :production_1_2, :production_1_3, :production_1_4, :score_1)";
+        public function inSert($username, $word_1, $word_2, $word_3, $word_4, $score){
+            $sql = "INSERT INTO production_airport(username, word_1, word_2, word_3, word_4, score) VALUES(:username, :word_1, :word_2, :word_3, :word_4, :score)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "production_1" => $production_1, "production_1_2" => $production_1_2, "production_1_3" => $production_1_3, "production_1_4" => $production_1_4, "score_1" => $score_1]);
+            $stmt->execute(["username" => $username, "word_1" => $word_1, "word_2" => $word_2, "word_3" => $word_3, "word_4" => $word_4, "score" => $score]);
             return true;
         }
     }
-    class Production2 extends Config {
+    class ScoreProductionActivities extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM production_2";
+            $sql = "SELECT * FROM production_activities";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $production_2, $production_2_2, $production_2_3, $production_2_4, $score_2){
-            $sql = "INSERT INTO production_2(user_name, production_2, production_2_2, production_2_3, production_2_4, score_2) VALUES(:user_name, :production_2, :production_2_2, :production_2_3, :production_2_4, :score_2)";
+        public function inSert($username, $word_1, $word_2, $word_3, $word_4, $score){
+            $sql = "INSERT INTO production_activities(username, word_1, word_2, word_3, word_4, score) VALUES(:username, :word_1, :word_2, :word_3, :word_4, :score)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "production_2" => $production_2, "production_2_2" => $production_2_2, "production_2_3" => $production_2_3, "production_2_4" => $production_2_4, "score_2" => $score_2]);
+            $stmt->execute(["username" => $username, "word_1" => $word_1, "word_2" => $word_2, "word_3" => $word_3, "word_4" => $word_4, "score" => $score]);
             return true;
         }
     }
-    class Production3 extends Config {
+    class ScoreProductionTourist extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM production_3";
+            $sql = "SELECT * FROM production_tourist";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $production_3, $production_3_2, $production_3_3, $production_3_4, $score_3){
-            $sql = "INSERT INTO production_3(user_name, production_3, production_3_2, production_3_3, production_3_4, score_3) VALUES(:user_name, :production_3, :production_3_2, :production_3_3, :production_3_4, :score_3)";
+        public function inSert($username, $word_1, $word_2, $word_3, $word_4, $score){
+            $sql = "INSERT INTO production_tourist(username, word_1, word_2, word_3, word_4, score) VALUES(:username, :word_1, :word_2, :word_3, :word_4, :score)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "production_3" => $production_3, "production_3_2" => $production_3_2, "production_3_3" => $production_3_3, "production_3_4" => $production_3_4, "score_3" => $score_3]);
+            $stmt->execute(["username" => $username, "word_1" => $word_1, "word_2" => $word_2, "word_3" => $word_3, "word_4" => $word_4, "score" => $score]);
             return true;
         }
     }
-    class Production4 extends Config {
+    class ScoreProductionShopping extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM production_4";
+            $sql = "SELECT * FROM production_shopping";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $production_4, $production_4_2, $production_4_3, $production_4_4, $score_4){
-            $sql = "INSERT INTO production_4(user_name, production_4, production_4_2, production_4_3, production_4_4, score_4) VALUES(:user_name, :production_4, :production_4_2, :production_4_3, :production_4_4, :score_4)";
+        public function inSert($username, $word_1, $word_2, $word_3, $word_4, $score){
+            $sql = "INSERT INTO production_shopping(username, word_1, word_2, word_3, word_4, score) VALUES(:username, :word_1, :word_2, :word_3, :word_4, :score)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "production_4" => $production_4, "production_4_2" => $production_4_2, "production_4_3" => $production_4_3, "production_4_4" => $production_4_4, "score_4" => $score_4]);
+            $stmt->execute(["username" => $username, "word_1" => $word_1, "word_2" => $word_2, "word_3" => $word_3, "word_4" => $word_4, "score" => $score]);
             return true;
         }
     }
-    class Production5 extends Config {
+    class ScoreProductionRestaurant extends Config {
         public function fetchAll(){
-            $sql = "SELECT * FROM production_5";
+            $sql = "SELECT * FROM production_restaurant";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
-        public function inSert($user_name, $production_5, $production_5_2, $production_5_3, $production_5_4, $score_5){
-            $sql = "INSERT INTO production_5(user_name, production_5, production_5_2, production_5_3, production_5_4, score_5) VALUES(:user_name, :production_5, :production_5_2, :production_5_3, :production_5_4, :score_5)";
+        public function inSert($username, $word_1, $word_2, $word_3, $word_4, $score){
+            $sql = "INSERT INTO production_restaurant(username, word_1, word_2, word_3, word_4, score) VALUES(:username, :word_1, :word_2, :word_3, :word_4, :score)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(["user_name" => $user_name, "production_5" => $production_5, "production_5_2" => $production_5_2, "production_5_3" => $production_5_3, "production_5_4" => $production_5_4, "score_5" => $score_5]);
+            $stmt->execute(["username" => $username, "word_1" => $word_1, "word_2" => $word_2, "word_3" => $word_3, "word_4" => $word_4, "score" => $score]);
             return true;
         }
     }
     
     class UserName extends Config {
         public function fetchAll(){
-            $sql = "SELECT u1.user_name, u2.user_name, u3.user_name, u4.user_name, u5.user_name, p1.user_name, p2.user_name, p3.user_name, p4.user_name, p5.user_name FROM unit_test1 u1 INNER JOIN unit_test2 u2 ON u1.user_name = u2.user_name INNER JOIN unit_test3 u3 ON u1.user_name = u3.user_name INNER JOIN unit_test4 u4 ON u1.user_name = u4.user_name INNER JOIN unit_test5 u5 ON u1.user_name = u5.user_name INNER JOIN production_1 p1 ON u1.user_name = p1.user_name INNER JOIN production_2 p2 ON u1.user_name = p2.user_name INNER JOIN production_3 p3 ON u1.user_name = p3.user_name INNER JOIN production_4 p4 ON u1.user_name = p4.user_name INNER JOIN production_5 p5 ON u1.user_name = p5.user_name";
+            $sql = "SELECT u_airport.username, u_activities.username, u_tourist.username, u_shopping.username, u_restaurant.username, p_airport.username, p_activities.username, p_tourist.username, p_shopping.username, p_restaurant.username FROM unit_test_airport u_airport 
+            INNER JOIN unit_test_activities u_activities ON u_airport.username = u_activities.username 
+            INNER JOIN unit_test_tourist u_tourist ON u_airport.username = u_tourist.username 
+            INNER JOIN unit_test_shopping u_shopping ON u_airport.username = u_shopping.username 
+            INNER JOIN unit_test_restaurant u_restaurant ON u_airport.username = u_restaurant.username 
+            INNER JOIN production_airport p_airport ON u_airport.username = p_airport.username 
+            INNER JOIN production_activities p_activities ON u_airport.username = p_activities.username 
+            INNER JOIN production_tourist p_tourist ON u_airport.username = p_tourist.username 
+            INNER JOIN production_shopping p_shopping ON u_airport.username = p_shopping.username 
+            INNER JOIN production_restaurant p_restaurant ON u_airport.username = p_restaurant.username
+            ";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
         }
     }
+    class UserSession extends Config {
+        public function fetchAll(){
+            $sql = "SELECT Name, Email FROM user;
+            ";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
+            return $row;
+        }
+    }
+
     class AdminScore extends Config {
         public function fetchAll(){
             $sql = "SELECT ur.Name, ur.Last_Name, ur.Email, ur.Status, sp.score_pretest, st.score_posttest, ABS(sp.score_pretest - st.score_posttest) AS score_difference FROM user AS ur LEFT JOIN score_pretest AS sp ON ur.Name = sp.user_name LEFT JOIN score_posttest AS st ON ur.Name = st.user_name;";
@@ -228,8 +249,37 @@
         }
     }
     class ScorePractice extends Config {
-        public function fetchAll(){
-            $sql = "SELECT u1.user_name, u1.unit_test1, u2.unit_test2, u3.unit_test3, u4.unit_test4, u5.unit_test5, u1.time_stamp, u2.time_stamp, u3.time_stamp, u4.time_stamp, u5.time_stamp FROM unit_test1 AS u1 LEFT JOIN unit_test2 AS u2 ON u1.user_name = u2.user_name LEFT JOIN unit_test3 AS u3 ON u1.user_name = u3.user_name LEFT JOIN unit_test4 AS u4 ON u1.user_name = u4.user_name LEFT JOIN unit_test5 AS u5 ON u1.user_name= u5.user_name;";
+        public function fetchAll()
+        {
+            $sql = "SELECT username AS username, unit AS unit, score AS score, unitTestComplete AS unitTestComplete FROM unit_test_airport
+            UNION ALL
+            SELECT username, unit, score, unitTestComplete FROM unit_test_activities
+            UNION ALL
+            SELECT username, unit, score, unitTestComplete FROM unit_test_tourist
+            UNION ALL
+            SELECT username, unit, score, unitTestComplete FROM unit_test_shopping
+            UNION ALL
+            SELECT username, unit, score, unitTestComplete FROM unit_test_restaurant;
+            ;";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
+            return $row;
+        }
+    }
+    class ScoreProduction extends Config {
+        public function fetchAll()
+        {
+            $sql = "SELECT username AS username, unit AS unit, word_1 AS word_1,word_2 AS word_2,word_3 AS word_3,word_4 AS word_4, score AS score, productionComplete AS productionComplete FROM production_airport
+            UNION ALL
+            SELECT username, unit, word_1, word_2 ,word_3 ,word_4 , score, productionComplete FROM production_activities
+            UNION ALL
+            SELECT username, unit,word_1, word_2 ,word_3 ,word_4 , score, productionComplete FROM production_tourist
+            UNION ALL
+            SELECT username, unit, word_1, word_2 ,word_3 ,word_4 , score, productionComplete FROM production_shopping
+            UNION ALL
+            SELECT username, unit, word_1, word_2 ,word_3 ,word_4 , score, productionComplete FROM production_restaurant;
+            ;";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();

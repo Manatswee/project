@@ -17,10 +17,11 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Units1</th>
-                        <th>Units2</th>
+                        <th>Units</th>
+                        <th>Score</th>
+                        <!-- <th>Units2</th>
                         <th>Units3</th>
-                        <th>Units4</th>
+                        <th>Units4</th> -->
                         <th>Date Time</th>
                     </tr>
                 </thead>
@@ -56,16 +57,14 @@
         function displayDataPractice(data) {
             const tableBody = document.getElementById('practiceTable');
             data.forEach(item => {
-                if (item.user_name === name) {
+                if (item.username === name) {
                     console.log(item);
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td>${item.user_name}</td>
-                        <td>${item.unit_test1}</td>
-                        <td>${item.unit_test2}</td>
-                        <td>${item.unit_test3}</td>
-                        <td>${item.unit_test4}</td>
-                        <td>${item.time_stamp}</td>
+                        <td>${item.username}</td>
+                        <td>${item.unit}</td>
+                        <td>${item.score}</td>
+                        <td>${item.unitTestComplete}</td>   
                     `;
                     tableBody.appendChild(row);
                 }

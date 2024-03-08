@@ -398,16 +398,16 @@ if (isset($_SESSION['email'])) {
                         alert('คุณไม่ได้รับคะแนน');
                     }
                     // URL ของ API
-                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-production3.php';
+                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-productiontourist.php';
 
                     // ข้อมูลที่ต้องการบันทึก
                     const postData = {
-                        user_name: userData,
-                        production_3: output1.innerHTML,
-                        production_3_2: output2.innerHTML,
-                        production_3_3: output3.innerHTML,
-                        production_3_4: output4.innerHTML,
-                        score_3: totalScore,
+                        username: userData,
+                        word_1: output1.innerHTML,
+                        word_2: output2.innerHTML,
+                        word_3: output3.innerHTML,
+                        word_4: output4.innerHTML,
+                        score: totalScore,
                     };
                     // ใช้ fetch() เพื่อทำการ POST ข้อมูล
                     fetch(apiUrl_saveData, {
