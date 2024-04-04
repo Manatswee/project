@@ -220,8 +220,7 @@
             INNER JOIN production_activities p_activities ON u_airport.username = p_activities.username 
             INNER JOIN production_tourist p_tourist ON u_airport.username = p_tourist.username 
             INNER JOIN production_shopping p_shopping ON u_airport.username = p_shopping.username 
-            INNER JOIN production_restaurant p_restaurant ON u_airport.username = p_restaurant.username
-            ";
+            INNER JOIN production_restaurant p_restaurant ON u_airport.username = p_restaurant.username";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
@@ -230,8 +229,7 @@
     }
     class UserSession extends Config {
         public function fetchAll(){
-            $sql = "SELECT Name, Email FROM user;
-            ";
+            $sql = "SELECT Name, Email FROM user";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetchAll();
@@ -268,7 +266,7 @@
         }
     }
     class ScoreProduction extends Config {
-        public function fetchAll()
+                public function fetchAll()
         {
             $sql = "SELECT username AS username, unit AS unit, word_1 AS word_1,word_2 AS word_2,word_3 AS word_3,word_4 AS word_4, score AS score, productionComplete AS productionComplete FROM production_airport
             UNION ALL
@@ -285,5 +283,40 @@
             $row = $stmt->fetchAll();
             return $row;
         }
+        
     }
-?>
+    class ForgetPassword extends Config {
+        public function fetchAll(){
+            $sql = "SELECT  Email FROM user";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
+            return $row;
+        }  
+    }
+    class NewPassword extends Config {
+        public function fetchAll($email){
+            $sql = "SELECT Passwords FROM user WHERE Email = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$email]);
+            $row = $stmt->fetchAll();
+            return $row;
+        }
+        
+        // public function update($email, $passwords) {
+        //     $sql = "UPDATE user SET Passwords = :Passwords WHERE Email = :Email";
+        //     $stmt = $this->conn->prepare($sql);
+        //     $stmt->bindValue(':Email', $email);
+        //     $stmt->bindValue(':Passwords', $passwords);
+        //     return $stmt->execute();
+        // }
+
+        public function update($email, $passwords) {
+            $sql = "UPDATE user SET Passwords = :Passwords WHERE Email = :Email";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':Email', $email);
+            $stmt->bindValue(':Passwords', $passwords);
+            return $stmt->execute();
+            
+        }
+    }

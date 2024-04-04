@@ -58,7 +58,7 @@ if (isset($_SESSION['email'])) {
 
             <script>
                 let name;
-                fetch('http://localhost/Projesct12/api/api-UserName.php', {
+                fetch('http://localhost/Projesct12/api/api-UserName', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

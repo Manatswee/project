@@ -39,422 +39,430 @@ if (isset($_SESSION['email'])) {
 }
 ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Application for Developing English Language Skills.</title>
-        <link rel="stylesheet" href="home_airport5.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application for Developing English Language Skills.</title>
+    <link rel="stylesheet" href="home_airport5.css">
 
-    </head>
+</head>
 
-    <body>
-        <h1><br>Production</h1>
-        <!-- <form action="../home/home.php"> -->
-            <div class="centering">
-                <div class="articles">
-                    <article>
-                        <figure>
-                            <img src="airport.jpg" alt="Preview">
-                        </figure>
-                        <div class="article-preview">
-                            <h2>Listen and respond to the questions.</h2>
-                            <!-- <h3>Record speech immediate response to check confidence.</h3><br> -->
-                            <table>
+<body>
+    <h1><br>Production</h1>
+    <!-- <form action="../home/home.php"> -->
+    <div class="centering">
+        <div class="articles">
+            <article>
+                <figure>
+                    <img src="airport.jpg" alt="Preview">
+                </figure>
+                <div class="article-preview">
+                    <h2>Listen and respond to the questions.</h2>
+                    <!-- <h3>Record speech immediate response to check confidence.</h3><br> -->
+                    <table>
 
-                                <tr>
-                                    <td class="left">
-                                        <h4>Question1:</h4>
-                                        <!-- Where does this conversation take place? -->
-                                        <br><br>
-                                        <div class="controls">
-                                            <button id="positionA">Play</button>
-                                            <audio id="audioA" src="../sound/ProductionU1Q1.mp3"></audio>
-                                        </div>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td class="left">
+                                <h4>Question1:</h4>
+                                <!-- Where does this conversation take place? -->
+                                <br><br>
+                                <div class="controls">
+                                    <button id="positionA">Play</button>
+                                    <audio id="audioA" src="../sound/ProductionU1Q1.mp3"></audio>
+                                </div>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td class="left1">Answer1 :
-                                        <div class="controls">
-                                            <button id="recordButton1">
+                        <tr>
+                            <td class="left1">Answer1 :
+                                <div class="controls">
+                                    <button id="recordButton1">
                                         Record</button>
-                                            <div id="output1"></div><br>
-                                            <!-- <button class="" id="startRecord1">บันทึก 1</button>
+                                    <div id="output1"></div><br>
+                                    <!-- <button class="" id="startRecord1">บันทึก 1</button>
                                     <button class="stopButton" id="stopRecord1" disabled>หยุด 1</button> -->
-                                        </div>
+                                </div>
 
-                                    </td>
+                            </td>
 
-                                </tr>
+                        </tr>
 
-                                <tr>
-                                    <td class="left">
-                                        <h4>Question2:</h4>
-                                        <!-- How long does the minivan take to get to the city center? -->
-                                        <br><br>
-                                        <div class="controls">
-                                            <button id="positionB">Play</button>
-                                            <audio id="audioB" src="../sound/ProductionU1Q2.mp3"></audio>
-                                        </div>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td class="left">
+                                <h4>Question2:</h4>
+                                <!-- How long does the minivan take to get to the city center? -->
+                                <br><br>
+                                <div class="controls">
+                                    <button id="positionB">Play</button>
+                                    <audio id="audioB" src="../sound/ProductionU1Q2.mp3"></audio>
+                                </div>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td class="left1">Answer2 :
-                                        <div class="controls">
-                                            <button id="recordButton2">
+                        <tr>
+                            <td class="left1">Answer2 :
+                                <div class="controls">
+                                    <button id="recordButton2">
                                         Record</button>
-                                            <div id="output2"></div><br>
-                                            <!-- <button class="recordButton" id="startRecord2">บันทึก 2</button>
+                                    <div id="output2"></div><br>
+                                    <!-- <button class="recordButton" id="startRecord2">บันทึก 2</button>
                                     <button class="stopButton" id="stopRecord2" disabled>หยุด 2</button> -->
-                                        </div>
-                                    </td>
-                                </tr>
+                                </div>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td class="left">
-                                        <h4>Question3:</h4>
-                                        <!-- How much does a minivan cost to get to the city center? -->
-                                        <br><br>
-                                        <div class="controls">
-                                            <button id="positionC">Play</button>
-                                            <audio id="audioC" src="../sound/ProductionU1Q3.mp3"></audio>
-                                        </div>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td class="left">
+                                <h4>Question3:</h4>
+                                <!-- How much does a minivan cost to get to the city center? -->
+                                <br><br>
+                                <div class="controls">
+                                    <button id="positionC">Play</button>
+                                    <audio id="audioC" src="../sound/ProductionU1Q3.mp3"></audio>
+                                </div>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td class="left1">Answer3 :
-                                        <div class="controls">
-                                            <button id="recordButton3">
+                        <tr>
+                            <td class="left1">Answer3 :
+                                <div class="controls">
+                                    <button id="recordButton3">
                                         Record</button>
-                                            <div id="output3"></div><br>
-                                            <!-- <button class="recordButton" id="startRecord3">บันทึก 3</button>
+                                    <div id="output3"></div><br>
+                                    <!-- <button class="recordButton" id="startRecord3">บันทึก 3</button>
                                     <button class="stopButton" id="stopRecord3" disabled>หยุด 3</button> -->
-                                        </div>
-                                    </td>
+                                </div>
+                            </td>
 
-                                </tr>
+                        </tr>
 
-                                <tr>
-                                    <td class="left">
-                                        <h4>Question4:</h4>
-                                        <!-- How much does a public bus cost to get to the city center? -->
-                                        <br><br>
-                                        <div class="controls">
-                                            <button id="positionD">Play</button>
-                                            <audio id="audioD" src="../sound/ProductionU1Q4.mp3"></audio>
-                                        </div>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td class="left">
+                                <h4>Question4:</h4>
+                                <!-- How much does a public bus cost to get to the city center? -->
+                                <br><br>
+                                <div class="controls">
+                                    <button id="positionD">Play</button>
+                                    <audio id="audioD" src="../sound/ProductionU1Q4.mp3"></audio>
+                                </div>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td class="left1">Answer4 :
-                                        <div class="controls">
-                                            <button id="recordButton4">
+                        <tr>
+                            <td class="left1">Answer4 :
+                                <div class="controls">
+                                    <button id="recordButton4">
                                         Record</button>
-                                            <div id="output4"></div><br>
-                                            <!-- <button class="recordButton" id="startRecord4">บันทึก 4</button>
+                                    <div id="output4"></div><br>
+                                    <!-- <button class="recordButton" id="startRecord4">บันทึก 4</button>
                                     <button class="stopButton" id="stopRecord4" disabled>หยุด 4</button> -->
-                                        </div>
-                                    </td>
+                                </div>
+                            </td>
 
-                                </tr>
-
-
-                                <!-- เพิ่มประโยคสนทนาและข้อมูลคนพูดตามที่คุณต้องการ -->
-                            </table>
-
-                            <!-- เพิ่มปุ่ม "Submit" -->
-                            <br><button id="submitButton">Submit</button>
-
-                            <!-- ส่วนที่จะแสดงคะแนน -->
-                            <div id="scoreDisplay">คะแนน: </div>
-
-                            <!-- <script src="home_airport5.js"></script> -->
-                        </div>
-                    </article>
+                        </tr>
 
 
+                        <!-- เพิ่มประโยคสนทนาและข้อมูลคนพูดตามที่คุณต้องการ -->
+                    </table>
+
+                    <!-- เพิ่มปุ่ม "Submit" -->
+                    <br><button id="submitButton">Submit</button>
+
+                    <!-- ส่วนที่จะแสดงคะแนน -->
+                    <div id="scoreDisplay">คะแนน: </div>
+
+                    <!-- <script src="home_airport5.js"></script> -->
                 </div>
-            </div>
-            <div class="button-container">
-                <button form action="home_airport4.php" id="button1">Back</button>
-                <button form action="../home/home.php" id="button">Finish</button>
-            </div>
+            </article>
 
-            <script>
-                // เรียกใช้งานอิเลเมนต์แบบ Audio
-                const audioA = document.getElementById('audioA');
-                const buttonA = document.getElementById('positionA');
-                const audioB = document.getElementById('audioB');
-                const buttonB = document.getElementById('positionB');
-                const audioAC = document.getElementById('audioC');
-                const buttonC = document.getElementById('positionC');
-                const audioD = document.getElementById('audioD');
-                const buttonD = document.getElementById('positionD');
 
-                let isPlaying = false;
+        </div>
+    </div>
+    <div class="button-container">
+        <button form action="home_airport4.php" id="button1">Back</button>
+        <button form action="../home/home.php" id="button">Finish</button>
+    </div>
 
-                
-                // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง A
-                buttonA.addEventListener('click', () => {
-                    if (!isPlaying) {
-                        // เล่นเสียง
-                        audioA.play();
-                        isPlaying = true;
-                        buttonA.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
-                    } else {
-                        // หยุดเสียงถ้ากำลังเล่นอยู่
-                        audioA.pause();
-                        audioA.currentTime = 0;
-                        isPlaying = false;
-                        buttonA.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
-                    }
-                });
+    <script>
+    // เรียกใช้งานอิเลเมนต์แบบ Audio
+    const audioA = document.getElementById('audioA');
+    const buttonA = document.getElementById('positionA');
+    const audioB = document.getElementById('audioB');
+    const buttonB = document.getElementById('positionB');
+    const audioAC = document.getElementById('audioC');
+    const buttonC = document.getElementById('positionC');
+    const audioD = document.getElementById('audioD');
+    const buttonD = document.getElementById('positionD');
 
-                // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง B
-                buttonB.addEventListener('click', () => {
-                    if (!isPlaying) {
-                        // เล่นเสียง
-                        audioB.play();
-                        isPlaying = true;
-                        buttonB.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
-                    } else {
-                        // หยุดเสียงถ้ากำลังเล่นอยู่
-                        audioB.pause();
-                        audioB.currentTime = 0;
-                        isPlaying = false;
-                        buttonB.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
-                    }
-                });
+    let isPlaying = false;
 
-                // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง C
-                buttonC.addEventListener('click', () => {
-                    if (!isPlaying) {
-                        // เล่นเสียง
-                        audioC.play();
-                        isPlaying = true;
-                        buttonC.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
-                    } else {
-                        // หยุดเสียงถ้ากำลังเล่นอยู่
-                        audioC.pause();
-                        audioC.currentTime = 0;
-                        isPlaying = false;
-                        buttonC.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
-                    }
-                });
 
-                // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง D
-                buttonD.addEventListener('click', () => {
-                    if (!isPlaying) {
-                        // เล่นเสียง
-                        audioD.play();
-                        isPlaying = true;
-                        buttonD.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
-                    } else {
-                        // หยุดเสียงถ้ากำลังเล่นอยู่
-                        audioD.pause();
-                        audioD.currentTime = 0;
-                        isPlaying = false;
-                        buttonD.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
-                    }
-                });
+    // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง A
+    buttonA.addEventListener('click', () => {
+        if (!isPlaying) {
+            // เล่นเสียง
+            audioA.play();
+            isPlaying = true;
+            buttonA.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
+        } else {
+            // หยุดเสียงถ้ากำลังเล่นอยู่
+            audioA.pause();
+            audioA.currentTime = 0;
+            isPlaying = false;
+            buttonA.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
+        }
+    });
 
-                // เชื่อมต่อกับบริการ Speech-to-Text API
-                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-                const recognition1 = new SpeechRecognition();
-                const recognition2 = new SpeechRecognition();
-                const recognition3 = new SpeechRecognition();
-                const recognition4 = new SpeechRecognition();
-                const output1 = document.getElementById('output1');
-                const output2 = document.getElementById('output2');
-                const output3 = document.getElementById('output3');
-                const output4 = document.getElementById('output4');
-                const recordButton1 = document.getElementById('recordButton1');
-                const recordButton2 = document.getElementById('recordButton2');
-                const recordButton3 = document.getElementById('recordButton3');
-                const recordButton4 = document.getElementById('recordButton4');
+    // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง B
+    buttonB.addEventListener('click', () => {
+        if (!isPlaying) {
+            // เล่นเสียง
+            audioB.play();
+            isPlaying = true;
+            buttonB.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
+        } else {
+            // หยุดเสียงถ้ากำลังเล่นอยู่
+            audioB.pause();
+            audioB.currentTime = 0;
+            isPlaying = false;
+            buttonB.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
+        }
+    });
 
-                recognition1.lang = 'en-US';
-                recognition2.lang = 'en-US';
-                recognition3.lang = 'en-US';
-                recognition4.lang = 'en-US';
+    // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง C
+    buttonC.addEventListener('click', () => {
+        if (!isPlaying) {
+            // เล่นเสียง
+            audioC.play();
+            isPlaying = true;
+            buttonC.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
+        } else {
+            // หยุดเสียงถ้ากำลังเล่นอยู่
+            audioC.pause();
+            audioC.currentTime = 0;
+            isPlaying = false;
+            buttonC.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
+        }
+    });
 
-                recognition1.interimResults = true;
-                recognition2.interimResults = true;
-                recognition3.interimResults = true;
-                recognition4.interimResults = true;
+    // กำหนดการฟังก์ชันเมื่อคลิกที่ตำแหน่ง D
+    buttonD.addEventListener('click', () => {
+        if (!isPlaying) {
+            // เล่นเสียง
+            audioD.play();
+            isPlaying = true;
+            buttonD.textContent = 'Pause'; // ปรับเปลี่ยนข้อความเป็น Pause
+        } else {
+            // หยุดเสียงถ้ากำลังเล่นอยู่
+            audioD.pause();
+            audioD.currentTime = 0;
+            isPlaying = false;
+            buttonD.textContent = 'Play'; // ปรับเปลี่ยนข้อความเป็น Play
+        }
+    });
 
-                // ...
+    // เชื่อมต่อกับบริการ Speech-to-Text API
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition1 = new SpeechRecognition();
+    const recognition2 = new SpeechRecognition();
+    const recognition3 = new SpeechRecognition();
+    const recognition4 = new SpeechRecognition();
+    const output1 = document.getElementById('output1');
+    const output2 = document.getElementById('output2');
+    const output3 = document.getElementById('output3');
+    const output4 = document.getElementById('output4');
+    const recordButton1 = document.getElementById('recordButton1');
+    const recordButton2 = document.getElementById('recordButton2');
+    const recordButton3 = document.getElementById('recordButton3');
+    const recordButton4 = document.getElementById('recordButton4');
 
-                function setupRecognition(recognition, output, recordButton) {
-                    let isRecording = false;
-                    let countdown = 10; // เริ่มนับถอยหลังที่ 20
+    recognition1.lang = 'en-US';
+    recognition2.lang = 'en-US';
+    recognition3.lang = 'en-US';
+    recognition4.lang = 'en-US';
 
-                    function updateCountdown() {
-                        recordButton.innerText = `Recording (${countdown})`;
-                    }
+    recognition1.interimResults = true;
+    recognition2.interimResults = true;
+    recognition3.interimResults = true;
+    recognition4.interimResults = true;
 
-                    function startCountdown() {
-                        countdown = 10;
-                        updateCountdown();
-                        const countdownInterval = setInterval(() => {
-                            countdown--;
-                            updateCountdown();
-                            if (countdown === 0) {
-                                clearInterval(countdownInterval);
-                                recognition.stop();
-                                // นี่คือตำแหน่งที่คุณสามารถเรียกฟังก์ชันแปลงเสียงเป็นข้อความได้
-                                // ตัวอย่างเช่น convertSpeechToText(output);
-                                recordButton.disabled = false;
-                                recordButton.innerText = 'Record';
-                            }
-                        }, 1000); // นับถอยหลังทุก 1 วินาที
-                    }
+    // ...
 
-                    recognition.onstart = function() {
-                        isRecording = true;
-                        recordButton.disabled = true;
-                        startCountdown();
-                    };
+    function setupRecognition(recognition, output, recordButton) {
+        let isRecording = false;
+        let countdown = 10; // เริ่มนับถอยหลังที่ 20
 
-                    recognition.onresult = function(event) {
-                        const result = event.results[event.results.length - 1];
-                        const transcript = result[0].transcript;
-                        output.innerHTML = transcript;
-                    };
+        function updateCountdown() {
+            recordButton.innerText = `Recording (${countdown})`;
 
-                    recognition.onend = function() {
-                        isRecording = false;
-                    };
+        }
 
-                    recordButton.addEventListener('click', () => {
-                        if (!isRecording) {
-                            recognition.start();
+        function startCountdown() {
+            countdown = 10;
+            updateCountdown();
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                updateCountdown();
+                if (countdown === 0) {
+                    clearInterval(countdownInterval);
+                    recognition.stop();
+                    // นี่คือตำแหน่งที่คุณสามารถเรียกฟังก์ชันแปลงเสียงเป็นข้อความได้
+                    // ตัวอย่างเช่น convertSpeechToText(output);
+                    recordButton.disabled = false;
+                    recordButton.innerText = 'Record';
+                }
+            }, 1000); // นับถอยหลังทุก 1 วินาที
+        }
+
+        recognition.onstart = function() {
+            isRecording = true;
+            recordButton.disabled = true;
+            startCountdown();
+        };
+
+        recognition.onresult = function(event) {
+            const result = event.results[event.results.length - 1];
+            const transcript = result[0].transcript;
+            output.innerHTML = transcript;
+        };
+
+        recognition.onend = function() {
+            isRecording = false;
+        };
+
+        recordButton.addEventListener('click', () => {
+            if (!isRecording) {
+                recognition.start();
+            }
+        });
+    }
+
+    // ...
+
+
+    setupRecognition(recognition1, output1, recordButton1);
+    setupRecognition(recognition2, output2, recordButton2);
+    setupRecognition(recognition3, output3, recordButton3);
+    setupRecognition(recognition4, output4, recordButton4);
+
+
+
+
+    /// แปรและส่วนแสดงคะแนน
+    let score = 0;
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const maxScore = 4; // คะแนนเต็ม
+
+
+
+
+    // เพิ่มฟังก์ชันเพื่อเช็คคีย์เวิร์ด
+    function checkKeywords(transcript) {
+        const keywords = ["Airport", "airport", "A the airport", "40 minutes", "about 40 minutes", "About 40 minutes",
+            "for 40 minutes", "For 40 minutes", "150 Baht", "150", "about 150 Baht", "cost 150 Baht", "100 Baht",
+            "100", "about 100 Baht", "cost 100 Baht", "Cost 150 Baht", "100 Baht", "About 100 Baht", "Cost 100 Baht"
+        ];
+
+        let foundKeywords = 0; // ตัวแปรเพื่อเก็บจำนวนคีย์เวิร์ดที่พบ
+
+        for (const keyword of keywords) {
+            if (transcript.includes(keyword)) {
+                foundKeywords++;
+            }
+        }
+
+        return foundKeywords; // คืนค่าจำนวนคำหรือประโยคที่ถูกตอบถูก
+    }
+
+
+    // เพิ่มตัวแปร global เพื่อตรวจสอบว่าปุ่มได้ถูกคลิกแล้วหรือไม่
+    let buttonClicked = false;
+
+    // เพิ่ม Event Listener สำหรับปุ่ม
+    submitButton.addEventListener('click', () => {
+        if (!output1.innerHTML || !output2.innerHTML || !output3.innerHTML || !output4.innerHTML) {
+            alert('คุณไม่ได้ตอบคำถาม');
+        } else {
+            if (!buttonClicked) {
+                // ตั้งค่าตัวแปร buttonClicked เป็น true เพื่อระบุว่าปุ่มได้ถูกคลิกแล้ว
+                buttonClicked = true;
+
+                const foundKeywords1 = checkKeywords(output1.innerHTML);
+                const foundKeywords2 = checkKeywords(output2.innerHTML);
+                const foundKeywords3 = checkKeywords(output3.innerHTML);
+                const foundKeywords4 = checkKeywords(output4.innerHTML);
+                const keyword1 = output1.innerHTML;
+
+                const totalScore = foundKeywords1 + foundKeywords2 + foundKeywords3 + foundKeywords4;
+                if (totalScore > 0) {
+                    scoreDisplay.innerText = `คะแนน: ${totalScore} คะแนน`;
+                    alert(`คะแนนที่คุณได้คือ: ${totalScore} คะแนน`);
+                } else {
+                    scoreDisplay.innerText = 'คะแนน: 0 คะแนน';
+                    alert('คุณไม่ได้รับคะแนน');
+                }
+                const apiUrl_saveData = 'http://localhost/Projesct12/api/api-productionairport';
+
+                const postData = {
+                    username: userData,
+                    word_1: output1.innerHTML,
+                    word_2: output2.innerHTML,
+                    word_3: output3.innerHTML,
+                    word_4: output4.innerHTML,
+                    score: totalScore,
+                };
+
+                // เพิ่ม fetch() เพื่อทำการ POST ข้อมูล
+                fetch(apiUrl_saveData, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(postData),
+                    })
+                    .then(response => {
+                        if (response.status === 200) {
+                            console.log('Data saved successfully');
+                            return response.json();
+                        } else {
+                            throw new Error('Data not saved');
                         }
+                    })
+                    .catch(error => {
+                        console.error('Error saving data:', error);
                     });
-                }
+            } else {
+                // แจ้งเตือนว่าปุ่มได้ถูกคลิกไปแล้ว
+                alert('คุณได้ทำการคลิกปุ่มนี้ไปแล้ว');
+            }
+        }
+    });
 
-                // ...
+    // รับอ้างอิงไปยังปุ่ม
+    const backButton = document.getElementById('button1');
+    const finishButton = document.getElementById('button');
 
+    // เพิ่มการฟังก์ชันเพื่อจัดการคลิกปุ่ม
+    backButton.addEventListener('click', function() {
+        window.location.href = 'home_airport4.php';
+    });
 
-                setupRecognition(recognition1, output1, recordButton1);
-                setupRecognition(recognition2, output2, recordButton2);
-                setupRecognition(recognition3, output3, recordButton3);
-                setupRecognition(recognition4, output4, recordButton4);
+    finishButton.addEventListener('click', function() {
+        if (!buttonClicked) {
+            alert("กรุณากด submit ก่อนที่จะกด Next");
+            return;
+        }
 
+        // ทำการ redirect หรือทำการปิดแบบทดสอบ (ตามที่คุณต้องการ)
+        // ตัวอย่างเช่น redirect ไปที่หน้าถัดไป
+        window.location.href = '../home/home.php';
+    });
+    </script>
 
+    <!-- </form> -->
+</body>
 
-
-                /// แปรและส่วนแสดงคะแนน
-                let score = 0;
-                const scoreDisplay = document.getElementById('scoreDisplay');
-                const maxScore = 4; // คะแนนเต็ม
-
-
-                
-
-                // เพิ่มฟังก์ชันเพื่อเช็คคีย์เวิร์ด
-                function checkKeywords(transcript) {
-                    const keywords = ["Airport", "airport", "A the airport", "40 minutes", "about 40 minutes", "About 40 minutes", "for 40 minutes", "For 40 minutes", "150 Baht", "150", "about 150 Baht", "cost 150 Baht", "100 Baht", "100", "about 100 Baht", "cost 100 Baht", "Cost 150 Baht", "100 Baht", "About 100 Baht", "Cost 100 Baht"];
-
-                    let foundKeywords = 0; // ตัวแปรเพื่อเก็บจำนวนคีย์เวิร์ดที่พบ
-
-                    for (const keyword of keywords) {
-                        if (transcript.includes(keyword)) {
-                            foundKeywords++;
-                        }
-                    }
-
-                    return foundKeywords; // คืนค่าจำนวนคำหรือประโยคที่ถูกตอบถูก
-                }
-
-
-                // ...
-
-                // เพิ่มการเช็คคีย์เวิร์ดเมื่อกดปุ่ม "Submit" และแสดงคะแนน
-                submitButton.addEventListener('click', () => {
-                    const foundKeywords1 = checkKeywords(output1.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition1 (output1)
-                    const foundKeywords2 = checkKeywords(output2.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition2 (output2)
-                    const foundKeywords3 = checkKeywords(output3.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition3 (output3)
-                    const foundKeywords4 = checkKeywords(output4.innerHTML); // ตรวจสอบคีย์เวิร์ดจากผลลัพธ์ของ recognition4 (output4)
-                    const keyword1 = output1.innerHTML;
-                    console.log(recognition1)
-
-                    const totalScore = foundKeywords1 + foundKeywords2 + foundKeywords3 + foundKeywords4;
-                    if (totalScore > 0) {
-                        // แสดงคะแนนเมื่อพบคำหรือประโยคที่ต้องการตรวจสอบและตอบถูก
-                        scoreDisplay.innerText = `คะแนน: ${totalScore} คะแนน`;
-                        alert(`คะแนนที่คุณได้คือ: ${totalScore} คะแนน`);
-                    } else if (totalScore == 0){
-                        // แสดงข้อความเมื่อไม่พบคำหรือประโยคที่ต้องการตรวจสอบหรือตอบถูก
-                        scoreDisplay.innerText = 'คะแนน: 0 คะแนน';
-                        alert('คุณไม่ได้รับคะแนน');
-                    } else {
-                        alert('โปรดตอบครบทุกข้อก่อนกด Submit');
-                    }
-                    // URL ของ API
-                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-productionairport.php';
-
-                    // ข้อมูลที่ต้องการบันทึก
-                    const postData = {
-                        username: userData,
-                        word_1: output1.innerHTML,
-                        word_2: output2.innerHTML,
-                        word_3: output3.innerHTML,
-                        word_4: output4.innerHTML,
-                        score: totalScore,
-                    };
-                    // ใช้ fetch() เพื่อทำการ POST ข้อมูล
-                    fetch(apiUrl_saveData, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(postData),
-                        })
-                        .then(response => {
-                            if (response.status === 201) {
-                                // กระบวนการบันทึกข้อมูลสำเร็จ
-                                console.log('Data saved successfully');
-                                return response.json();
-                            } else {
-                                // กระบวนการบันทึกข้อมูลไม่สำเร็จ
-                                throw new Error('Data not saved');
-                            }
-                        })
-                        .then(data => {
-                            // ดึงข้อมูลจากการบันทึกสำเร็จ
-                            console.log('Data:', data);
-                        })
-                        .catch(error => {
-                            // หากเกิดข้อผิดพลาดในการบันทึก
-                            console.error('Error saving data:', error);
-                        });
-                });
-                
-
-
-                // รับอ้างอิงไปยังปุ่ม
-                const backButton = document.getElementById('button1');
-                const finishButton = document.getElementById('button');
-
-                // เพิ่มการฟังก์ชันเพื่อจัดการคลิกปุ่ม
-                backButton.addEventListener('click', function() {
-                    window.location.href = 'home_airport4.php';
-                });
-
-                finishButton.addEventListener('click', function() {
-                    window.location.href = '../home/home.php';
-                });
-
-            </script>
-
-            <!-- </form> -->
-    </body>
-
-    </html>
+</html>

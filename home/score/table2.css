@@ -48,7 +48,7 @@ body {
 }
 
 .table-widget table {
-    width: 800px;
+    width: 1350px;
     border-collapse: collapse;
 }
 
@@ -82,12 +82,23 @@ body {
     margin: 8px 0px;
 }
 
+.table-widget th,
+.table-widget td {
+    font-size: 0.875rem;
+    /* เพิ่มเพื่อลดขนาดฟ้อน */
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% / 9);
+    /* คอลัมน์ทั้งหมดมี 9 คอลัมน์ */
+}
+
 .table-widget th {
     padding: 20px 16px;
     font-size: 0.875rem;
     color: var(--gray);
-    width: 25%;
-    /* เพิ่มเพื่อกำหนดความกว้างของคอลัมน์ให้เท่ากับ 25% ของตาราง */
 }
 
 .table-widget thead {
@@ -102,12 +113,19 @@ body {
 .table-widget td {
     padding: 8px 16px;
     vertical-align: middle;
-    width: 25%;
+    /* width: 25%; */
     /* เพิ่มเพื่อกำหนดความกว้างของคอลัมน์ให้เท่ากับ 25% ของตาราง */
 }
 
 .table-widget tbody tr {
     cursor: pointer;
+    display: flex;
+    /* ให้แถวเป็นแนวนอน */
+}
+
+.table-widget tbody tr>* {
+    flex: 1;
+    /* ให้คอลัมน์กระจายพื้นที่เท่ากัน */
 }
 
 .table-widget tbody tr:nth-child(odd) {

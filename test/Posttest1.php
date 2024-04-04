@@ -89,7 +89,7 @@ if (isset($_SESSION['email'])) {
                 finishButton.style.display = 'block';
 
                 // URL ของ API
-                const apiUrl_saveData = 'http://localhost/Projesct12/api/posttest.php';
+                const apiUrl_saveData = 'http://localhost/Projesct12/api/posttest';
 
                 // ข้อมูลที่ต้องการบันทึก
                 const postData = {

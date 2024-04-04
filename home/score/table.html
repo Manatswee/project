@@ -34,7 +34,7 @@
                 </tbody>
 
                 <script>
-                    const apiUrl_userdata = 'http://localhost/Projesct12/api/api-adminscore.php';
+                    const apiUrl_userdata = 'http://localhost/Projesct12/api/api-adminscore';
                     fetch(apiUrl_userdata)
                         .then(response => {
                             if (response.status === 200) {
@@ -60,18 +60,20 @@
                         // เริ่มต้นใส่ข้อมูลลงในตาราง
 
                         data.forEach(rowData => {
-                            const row = document.createElement('tr');
-                            row.innerHTML = `
+                                    const row = document.createElement('tr');
+                                    row.innerHTML = `
                                 <td>${rowData.Name}</td>
                                 <td>${rowData.Last_Name}</td>
                                 <td>${rowData.Status}</td>
                                 <td>${rowData.Email}</td>
                                 <td>${rowData.score_pretest}</td>
                                 <td>${rowData.score_posttest}</td>
-                                <td>${rowData.score_difference}</td>
+                                <td ${rowData.score_difference != null ? `style="color: ${rowData.score_pretest > rowData.score_posttest ? 'red' : (rowData.score_pretest < rowData.score_posttest ? 'green' : 'blue')}"` : ''}>${rowData.score_difference}</td>
                                 <td><a id="practice_link">click</a></td>
                                 <td><a id="speaking_link">click</a></td>
                             `;
+
+
                             tableBody.appendChild(row);
 
                             const practiceLink = row.querySelector('#practice_link');

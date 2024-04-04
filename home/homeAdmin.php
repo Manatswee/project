@@ -19,7 +19,10 @@ if (isset($_SESSION['email'])) {
         $user_result = $stmt->get_result();
         if ($user_result->num_rows > 0) {
             $userData = $user_result->fetch_assoc();
-            
+            // ส่งข้อมูลไปยัง JavaScript โดยใช้ echo
+            echo '<script>';
+            echo 'const userData = ' . json_encode($userData['Name']) . ';';
+            echo '</script>';
         } 
         // Add a check for the user role or any other criteria if necessary
         else {
@@ -34,6 +37,7 @@ if (isset($_SESSION['email'])) {
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,16 +50,18 @@ if (isset($_SESSION['email'])) {
     <header class="header">
         <nav class="navbar">
             <br><br>
-            <!-- <form action="session.php" method="post"> -->
-
-            <a href="homeAdmin.php">Home</a>
-            <a href="../testAdmin/test.html">Test</a>
-            <a href="../linkAdmin/link.php">Link</a>
-            <a href="../about/aboutAdmin.php">About</a>
-            <a href="logout.php">Logout</a>
+            <a href="homeAdmin.html">Home</a>
+            <a href="../linkAdmin/link.html">Link</a>
+            <a href="../testAdmin/test.php">Test</a>
             <a href="loginadmin.html">Admin</a>
 
-            <!-- </form> -->
+        </nav>
+
+        <nav class="navbar1">
+            <br><br>
+            <a href="../about/aboutAdmin.php">About</a>
+            <a href="logout.php">Logout</a>
+
         </nav>
     </header>
 
@@ -76,8 +82,8 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Transportation to Chumphon city center <br><br><br>
                             <center>
-                                <a href="../homeAirport/home_airport.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeAirport/home_airport.php">
+                                <a href="../homeAdmin/homeAirport/home_airport.html" class="read-more" title="เรียนรู้เพิ่มเติม">
+                                    <form action="../homeAdmin/homeAirport/home_airport.html">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -94,8 +100,8 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Recommend outdoor activities<br><br><br>
                             <center>
-                                <a href="../homeRecreational/home_recreational.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeRecreational/home_recreational.php">
+                                <a href="../homeAdmin/homeRecreational/home_recreational.html" class="read-more" title="เรียนรู้เพิ่มเติม">
+                                    <form action="../homeAdmin/homeRecreational/home_recreational.html">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -112,8 +118,8 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Recommend places<br><br><br><br>
                             <center>
-                                <a href="../homeTourist/home_tourist.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeTourist/home_tourist.php">
+                                <a href="../homeAdmin/homeTourist/home_tourist.html" class="read-more" title="เรียนรู้เพิ่มเติม">
+                                    <form action="../homeAdmin/homeTourist/home_tourist.html">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -130,8 +136,8 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Recommend souvenirs<br><br><br><br>
                             <center>
-                                <a href="../homeShopping/home_shopping.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeShopping/home_shopping.php">
+                                <a href="../homeAdmin/homeShopping/home_shopping.html" class="read-more" title="เรียนรู้เพิ่มเติม">
+                                    <form action="../homeAdmin/homeShopping/home_shopping.html">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -148,8 +154,8 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Recommend food and Beverages<br><br><br>
                             <center>
-                                <a href="../homeRestaurant/home_restaurant.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeRestaurant/home_restaurant.php">
+                                <a href="../homeAdmin/homeRestaurant/home_restaurant.html" class="read-more" title="เรียนรู้เพิ่มเติม">
+                                    <form action="../homeAdmin/homeRestaurant/home_restaurant.html">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -157,8 +163,18 @@ if (isset($_SESSION['email'])) {
                         </p>
                     </div>
                 </article>
+
             </div>
         </div>
+        </nav>
+
+        <!-- <nav class="navbar1">
+            <br><br>
+            <a href="../about/aboutAdmin.php">About</a>
+            <a href="loginadmin.html">Admin</a>
+            <a href="logout.php">Logout</a>
+
+        </nav> -->
     </div>
 
 
