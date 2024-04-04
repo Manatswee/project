@@ -320,3 +320,13 @@
             
         }
     }
+    class Admin extends Config {
+        public function fetchAll(){
+            $sql = "SELECT  Email FROM admin1";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
+            return $row;
+        }  
+    }
+    

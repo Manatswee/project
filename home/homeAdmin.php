@@ -13,16 +13,13 @@ if (isset($_SESSION['email'])) {
         die("Failed to connect: " . $con->connect_error);
     } else {
         // Prepare SQL statement to retrieve user data based on the logged-in email
-        $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt = $con->prepare("SELECT * FROM admin1 WHERE Email = ?");
         $stmt->bind_param("s", $loggedInEmail);
         $stmt->execute();
         $user_result = $stmt->get_result();
         if ($user_result->num_rows > 0) {
             $userData = $user_result->fetch_assoc();
-            // ส่งข้อมูลไปยัง JavaScript โดยใช้ echo
-            echo '<script>';
-            echo 'const userData = ' . json_encode($userData['Name']) . ';';
-            echo '</script>';
+           
         } 
         // Add a check for the user role or any other criteria if necessary
         else {
@@ -50,10 +47,10 @@ if (isset($_SESSION['email'])) {
     <header class="header">
         <nav class="navbar">
             <br><br>
-            <a href="homeAdmin.html">Home</a>
-            <a href="../linkAdmin/link.html">Link</a>
+            <a href="homeAdmin.php">Home</a>
+            <a href="../linkAdmin/link.php">Link</a>
             <a href="../testAdmin/test.php">Test</a>
-            <a href="loginadmin.html">Admin</a>
+            <a href="loginadmin.php">Admin</a>
 
         </nav>
 
@@ -83,7 +80,7 @@ if (isset($_SESSION['email'])) {
                             Transportation to Chumphon city center <br><br><br>
                             <center>
                                 <a href="../homeAdmin/homeAirport/home_airport.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeAdmin/homeAirport/home_airport.html">
+                                    <form action="../homeAdmin/homeAirport/home_airport.php">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -101,7 +98,7 @@ if (isset($_SESSION['email'])) {
                             Recommend outdoor activities<br><br><br>
                             <center>
                                 <a href="../homeAdmin/homeRecreational/home_recreational.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeAdmin/homeRecreational/home_recreational.html">
+                                    <form action="../homeAdmin/homeRecreational/home_recreational.php">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -119,7 +116,7 @@ if (isset($_SESSION['email'])) {
                             Recommend places<br><br><br><br>
                             <center>
                                 <a href="../homeAdmin/homeTourist/home_tourist.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeAdmin/homeTourist/home_tourist.html">
+                                    <form action="../homeAdmin/homeTourist/home_tourist.php">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -137,7 +134,7 @@ if (isset($_SESSION['email'])) {
                             Recommend souvenirs<br><br><br><br>
                             <center>
                                 <a href="../homeAdmin/homeShopping/home_shopping.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeAdmin/homeShopping/home_shopping.html">
+                                    <form action="../homeAdmin/homeShopping/home_shopping.php">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>
@@ -155,7 +152,7 @@ if (isset($_SESSION['email'])) {
                             Recommend food and Beverages<br><br><br>
                             <center>
                                 <a href="../homeAdmin/homeRestaurant/home_restaurant.html" class="read-more" title="เรียนรู้เพิ่มเติม">
-                                    <form action="../homeAdmin/homeRestaurant/home_restaurant.html">
+                                    <form action="../homeAdmin/homeRestaurant/home_restaurant.php">
                                         <button id="button1">Learn more</button>
                                     </form>
                                 </a>

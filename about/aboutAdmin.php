@@ -96,7 +96,7 @@
 
     </form>
 
-    <form action="../home/homeAdmin.html">
+    <form action="../home/homeAdmin.php">
         <br><button>Back</button><br><br>
     </form>
 </body>

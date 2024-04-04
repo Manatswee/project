@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if the email is admin or not
         if ($email === "admin@gmail.com") {
             // If admin, search in the admin1 table
-            $stmt = $con->prepare("SELECT * FROM admin1 WHERE email = ?");
+            $stmt = $con->prepare("SELECT * FROM admin1 WHERE   Email = ?");
         } else {
             // If not admin, search in the user table
             $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
@@ -36,14 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt_score->execute();
                 $score_login = $stmt_score->get_result();
 
+                $stmt_score_admin = $con->prepare("SELECT email FROM admin1 WHERE Email = ?");
+                $stmt_score_admin->bind_param("s", $email);
+                $stmt_score_admin->execute();
+                $score_login_admin = $stmt_score_admin->get_result();
+
                 // If there is a score for the user, redirect to home.php
                 if ($score_login->num_rows > 0) {
                     header("Location: home.php");
                     exit();
                 }
-                else if ($email === "admin@gmail.com") {
+                else if ($score_login_admin->num_rows > 0) {
                     // If admin, redirect to homeAdmin.php
-                    header("Location: homeAdmin.html");
+                    header("Location: homeAdmin.php");
                     exit();
                 }
                  else {

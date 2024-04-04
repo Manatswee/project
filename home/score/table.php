@@ -13,16 +13,13 @@ if (isset($_SESSION['email'])) {
         die("Failed to connect: " . $con->connect_error);
     } else {
         // Prepare SQL statement to retrieve user data based on the logged-in email
-        $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt = $con->prepare("SELECT * FROM admin1 WHERE Email = ?");
         $stmt->bind_param("s", $loggedInEmail);
         $stmt->execute();
         $user_result = $stmt->get_result();
         if ($user_result->num_rows > 0) {
             $userData = $user_result->fetch_assoc();
-            // ส่งข้อมูลไปยัง JavaScript โดยใช้ echo
-            echo '<script>';
-            echo 'const userData = ' . json_encode($userData['Name']) . ';';
-            echo '</script>';
+           
         } 
         // Add a check for the user role or any other criteria if necessary
         else {
@@ -38,147 +35,110 @@ if (isset($_SESSION['email'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Web Application for Developing English Language Skills.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="table.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Web Application for Developing English Language Skills.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="table.css">
+    </head>
 
-<body>
-    <div class="background">
-        <h1><br>Score</h1>
-        <div class="table-widget">
+    <body>
+        <div class="background">
+            <h1><br>Score</h1>
+            <div class="table-widget">
 
-            <table>
-                <!-- <caption>
-                Score
-                <span class="table-row-count"></span>
-            </caption> -->
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Surname</th>
-                        <th>Status</th>
-                        <th>Email address</th>
-                        <th>Pre-Test</th>
-                        <th>Post-Test</th>
-                        <th>Score Prtcentage Increase</th>
-                        <th>Practice</th>
-                        <th>Speaking Test</th>
-                    </tr>
-                </thead>
-                <tbody id="tableData">
-                    <!-- ข้อมูลจะถูกเติมที่นี่โดย JavaScript -->
-                </tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Status</th>
+                            <th>Email address</th>
+                            <th>Pre-Test</th>
+                            <th>Post-Test</th>
+                            <th>Score Prtcentage Increase</th>
+                            <th>Practice</th>
+                            <th>Speaking Test</th>
 
-                <script>
-                    const apiUrl_saveData = 'http://localhost/Projesct12/api/api-adminscore.php';
-                    // ใช้ fetch() เพื่อทำการ GET ข้อมูล
-                    fetch(apiUrl_saveData)
-                        .then(response => {
-                            if (response.status === 200) {
-                                // กระบวนการ GET ข้อมูลสำเร็จ
-                                console.log('get data successfully');
-                                return response.json(); // อ่านข้อมูล JSON จาก response
-                            } else {
-                                // กระบวนการ GET ข้อมูลไม่สำเร็จ
-                                throw new Error('get data failed');
-                            }
-                        })
-                        .then(data => {
-                            // เรียกใช้ฟังก์ชันเพื่อสร้างแถวข้อมูลในตาราง
-                            displayDataInTable(data);
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
+                        </tr>
 
-                    const apiUrl_score_practice = 'http://localhost/Projesct12/api/api-scorepractice.php';
-                    // ใช้ fetch() เพื่อทำการ GET ข้อมูล
-                    fetch(apiUrl_score_practice)
-                        .then(response => {
-                            if (response.status === 200) {
-                                // กระบวนการ GET ข้อมูลสำเร็จ
-                                console.log('get data successfully');
-                                return response.json(); // อ่านข้อมูล JSON จาก response
-                            } else {
-                                // กระบวนการ GET ข้อมูลไม่สำเร็จ
-                                throw new Error('get data failed');
-                            }
-                        })
-                        .then(data => {
-                            score_practice = data;
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
+                    </thead>
+                    <tbody id="tableData">
+                        <!-- ข้อมูลจะถูกเติมที่นี่โดย JavaScript -->
+                    </tbody>
 
-                    // เพิ่มตัวแปรเพื่อติดตามสถานะการคลิก
-                    let click = 0;
+                    <script>
+                        const apiUrl_userdata = 'http://localhost/Projesct12/api/api-adminscore';
+                        fetch(apiUrl_userdata)
+                            .then(response => {
+                                if (response.status === 200) {
+                                    console.log('get data apiUrl_userdata successfully');
+                                    return response.json();
+                                } else {
+                                    throw new Error('get data apiUrl_userdata successfully failed');
+                                }
+                            })
+                            .then(data => {
+                                displayDataInTable(data);
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
 
-                    function displayDataInTable(data) {
-                        const tableBody = document.getElementById('tableData');
-                        // เริ่มต้นใส่ข้อมูลลงในตาราง
-                        data.forEach(rowData => {
-                            const row = document.createElement('tr');
-                            row.innerHTML = `
+                        // เพิ่มตัวแปรเพื่อติดตามสถานะการคลิก
+                        let click_pratice = 0;
+                        let click_speaking = 0;
+
+                        function displayDataInTable(data) {
+                            const tableBody = document.getElementById('tableData');
+                            // เริ่มต้นใส่ข้อมูลลงในตาราง
+
+                            data.forEach(rowData => {
+                                        const row = document.createElement('tr');
+                                        row.innerHTML = `
                                 <td>${rowData.Name}</td>
                                 <td>${rowData.Last_Name}</td>
                                 <td>${rowData.Status}</td>
                                 <td>${rowData.Email}</td>
                                 <td>${rowData.score_pretest}</td>
                                 <td>${rowData.score_posttest}</td>
-                                <td>${rowData.score_difference}</td>
-                                <td><a id="practice_link" href="table1.html">click</a></td>
-                                <td><a id="speaking_link" href="table2.html">click</a></td>
+                                <td ${rowData.score_difference != null ? `style="color: ${rowData.score_pretest > rowData.score_posttest ? 'red' : (rowData.score_pretest < rowData.score_posttest ? 'green' : 'blue')}"` : ''}>${rowData.score_difference}</td>
+                                <td><a id="practice_link">click</a></td>
+                                <td><a id="speaking_link">click</a></td>
                             `;
+
+
                             tableBody.appendChild(row);
 
-                            // เพิ่ม Event Listener เมื่อคลิกที่ลิงก์ Practice
                             const practiceLink = row.querySelector('#practice_link');
                             practiceLink.addEventListener('click', function() {
-                                if (click === 0) {
-                                    practiceLink.href = 'table1.html';
-                                    click = 1;
-                                } else {
-                                    practiceLink.href = 'table1.html';
-                                    click = 0;
+
+                                if (click_pratice === 0) {
+                                    var name = rowData.Name;
+                                    practiceLink.href = 'table1.php?name=' + encodeURIComponent(name);
                                 }
                             });
 
-                            // เพิ่ม Event Listener เมื่อคลิกที่ลิงก์ Speaking Test
                             const speakingLink = row.querySelector('#speaking_link');
                             speakingLink.addEventListener('click', function() {
-                                if (click === 0) {
-                                    speakingLink.href = 'table2.html';
-                                    click = 1;
-                                } else {
-                                    speakingLink.href = 'table2.html';
-                                    click = 0;
+
+                                if (click_pratice === 0) {
+                                    var name = rowData.Name;
+                                    speakingLink.href = 'table2.php?name=' + encodeURIComponent(name);
                                 }
                             });
                         });
                     }
-                </script>
+                    </script>
 
-                <tfoot>
-                    <tr>
-                        <td colspan="4">
-                            <ul class="pagination">
-                                <!--? generated pages -->
 
-                            </ul>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+                </table>
+            </div>
         </div>
-    </div>
-    <script src="table.css"></script>
-</body>
+        <script src="table.css"></script>
+    </body>
 
-</html>
+    </html>

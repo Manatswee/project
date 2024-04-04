@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($email === "admin@gmail.com") {
                     // If admin, redirect to table.html
-                    header("Location: score/table.html");
+                    header("Location: score/table.php");
                     exit();
                 } else {
                     // If not admin, redirect to admin.html
