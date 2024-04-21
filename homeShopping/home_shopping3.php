@@ -86,7 +86,7 @@ if (isset($_SESSION['email'])) {
                         resultContainer.innerHTML = `<p>คะแนนของคุณ: ${score} / ${correctAnswers.length}</p>`;
 
                         // URL ของ API
-                        const apiUrl_saveData = 'http://localhost/Projesct12/api/api-unittest-shopping';
+                        const apiUrl_saveData = 'http://localhost/Projesct15/api/api-unittest-shopping';
 
                         // ข้อมูลที่ต้องการบันทึก
                         const postData = {

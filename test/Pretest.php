@@ -59,7 +59,7 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Start taking tests before class.
 
-                            <br><br>(เริ่มทำแบบทดสอบก่อนเรียน)
+                            <!-- <br><br>(เริ่มทำแบบทดสอบก่อนเรียน) -->
 
                             <br><br>
                             <a href="Pretest1.php" class="read-more" title="แบบทดสอบก่อนเรียน">

@@ -37,7 +37,7 @@
         const name = urlParams.get('name');
         console.log(name);
 
-        const apiUrl_score_practice = 'http://localhost/Projesct12/api/api-scorepractice';
+        const apiUrl_score_practice = 'http://localhost/Projesct15/api/api-scorepractice';
         fetch(apiUrl_score_practice)
             .then(response => {
                 if (response.status === 200) {

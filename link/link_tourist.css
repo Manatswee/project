@@ -16,7 +16,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../home/sky.jpg') no-repeat;
+    background-color: #f9bdbb !important;
+    /* background: url('../home/sky.jpg') no-repeat; */
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -154,3 +155,40 @@ button {
     font-size: 1em;
     font-weight: 600;
 } */
+
+.container {
+    position: relative;
+    width: 150px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.image1 {
+    flex: 1;
+    position: relative;
+}
+
+.image1 img {
+    width: 150px;
+    height: auto;
+}
+
+.overlay1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    /* border-radius: 0 0 15px 15px; */
+}
+
+.overlay1 a {
+    color: white;
+    text-decoration: none;
+}

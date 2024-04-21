@@ -12,7 +12,8 @@ body {
 }
 
 .background {
-    background: url('../home/sky.jpg') no-repeat;
+    background-color: #f9bdbb;
+    /* background: url('../home/sky.jpg') no-repeat; */
     background-position: center;
     background-size: cover;
     height: 100vh;

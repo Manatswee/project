@@ -17,8 +17,9 @@ h1 {
 }
 
 body {
-    background: url('sky.jpg')no-repeat;
-    background-attachment: fixed;
+    background-color: #9fa8da;
+    /* background: url('sky.jpg')no-repeat;
+    background-attachment: fixed; */
     font-family: sans-serif;
     margin: 0px;
     display: flex;
@@ -28,7 +29,7 @@ body {
     width: 100%;
     padding: 16px;
     background-position: center;
-    background-color: var(--background);
+    /* background-color: var(--background); */
     background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;

@@ -14,7 +14,8 @@ body {
 }
 
 .background {
-    background: url('../home/sky.jpg') no-repeat;
+    background-color: #f9bdbb;
+    /* background: url('../home/sky.jpg') no-repeat; */
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -42,7 +43,8 @@ body {
     width: 75%;
     height: 650px;
     margin-top: 20px;
-    background: url('../home/sky.jpg') no-repeat;
+    background-color: #f69988;
+    /* background: url('../home/sky.jpg') no-repeat; */
     background-position: center;
     background-size: cover;
     border-radius: 20px;

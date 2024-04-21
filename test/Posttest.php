@@ -77,7 +77,7 @@ if (isset($_SESSION['email'])) {
                         <p>
                             Start taking the test after class.
 
-                            <br><br>(เริ่มทำแบบทดสอบหลังเรียน)
+                            <!-- <br><br>(เริ่มทำแบบทดสอบหลังเรียน) -->
 
 
                             <br><br>

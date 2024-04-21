@@ -40,7 +40,7 @@ if (isset($_SESSION['email'])) {
 
 <head>
     <title>Web Application for Developing English Language Skills.</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="loginadmin.css">
 </head>
 
 <body>

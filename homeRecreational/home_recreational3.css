@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('../home/sky.jpg');
+    background-color: #f9bdbb;
+    /* background: url('../home/sky.jpg'); */
     margin: 0;
     padding: 0;
 }
@@ -67,16 +68,15 @@ button[type="button3"] {
 }
 
 button[type="submit"] {
-    background-color: rgb(77, 189, 245);
-    /* สีเขียว */
+    background-color: #ff8ff9;
     color: #fff;
 }
 
 button[type="button3"] {
-    /* ปุ่ม do it again */
-    background-color: rgb(255, 215, 39);
-    /* สีแดง */
-    color: #fff;
+    border: 2px solid #ff8ff9;
+    /* กำหนดขอบปุ่มเป็นเส้นขนาด 2px สีชมพูอมม่วง */
+    background-color: #ffff;
+    color: #ff8ff9;
 }
 
 button[type="submit"]:hover {
@@ -85,7 +85,7 @@ button[type="submit"]:hover {
 
 button[type="button3"]:hover {
     /* ปุ่ม do it again */
-    background-color: #ea4909;
+    background-color: #1e00b3;
 }
 
 #result {

@@ -52,7 +52,7 @@ if (isset($_SESSION['email'])) {
             <!-- <a href="test1_1.html">Test</a> -->
             <a href="../homepageNewUser/link.php">Link</a>
             <a href="../homepageNewUser/about.php">About</a>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Log out</a>
             <!-- <a href="loginadmin.html">Admin</a> -->
 
             <!-- </form> -->

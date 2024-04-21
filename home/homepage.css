@@ -16,7 +16,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(homepage.jpg) no-repeat;
+    background-color: #f9bdbb;
+    /* background: url(homepage.jpg) no-repeat; */
     background-position: center;
     background-size: cover;
     height: 100vh;

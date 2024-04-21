@@ -55,11 +55,11 @@ if (isset($_SESSION['email'])) {
                         <tr>
                             <th>Name</th>
                             <th>Surname</th>
-                            <th>Status</th>
+                            <th>Degree/Occupation</th>
                             <th>Email address</th>
                             <th>Pre-Test</th>
                             <th>Post-Test</th>
-                            <th>Score Prtcentage Increase</th>
+                            <th>Performance</th>
                             <th>Practice</th>
                             <th>Speaking Test</th>
 
@@ -71,7 +71,7 @@ if (isset($_SESSION['email'])) {
                     </tbody>
 
                     <script>
-                        const apiUrl_userdata = 'http://localhost/Projesct12/api/api-adminscore';
+                        const apiUrl_userdata = 'http://localhost/Projesct15/api/api-adminscore';
                         fetch(apiUrl_userdata)
                             .then(response => {
                                 if (response.status === 200) {
@@ -105,9 +105,11 @@ if (isset($_SESSION['email'])) {
                                 <td>${rowData.Email}</td>
                                 <td>${rowData.score_pretest}</td>
                                 <td>${rowData.score_posttest}</td>
-                                <td ${rowData.score_difference != null ? `style="color: ${rowData.score_pretest > rowData.score_posttest ? 'red' : (rowData.score_pretest < rowData.score_posttest ? 'green' : 'blue')}"` : ''}>${rowData.score_difference}</td>
-                                <td><a id="practice_link">click</a></td>
-                                <td><a id="speaking_link">click</a></td>
+                                <td ${rowData.score_difference != null ? `style="color: ${rowData.score_pretest > rowData.score_posttest ? 'red' : (rowData.score_pretest < rowData.score_posttest ? 'green' : 'blue')}"` : ''}>
+                                    ${rowData.score_pretest > rowData.score_posttest ? '-' : ''}${rowData.score_difference}
+                                </td>
+                                <td><a id="practice_link">show more</a></td>
+                                <td><a id="speaking_link">show more</a></td>
                             `;
 
 

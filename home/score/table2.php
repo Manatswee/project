@@ -57,7 +57,7 @@
         const name = urlParams.get('name');
         console.log(name);
 
-        const apiUrl_score_production = 'http://localhost/Projesct12/api/api-scoreproduction';
+        const apiUrl_score_production = 'http://localhost/Projesct15/api/api-scoreproduction';
         fetch(apiUrl_score_production)
             .then(response => {
                 if (response.status === 200) {

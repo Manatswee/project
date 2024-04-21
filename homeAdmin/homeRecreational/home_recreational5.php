@@ -56,7 +56,8 @@ if (isset($_SESSION['email'])) {
                 </figure>
                 <div class="article-preview">
                     <h2>Listen and respond to the questions.</h2>
-                    <!-- <h3>Record speech immediate response to check confidence.</h3><br> -->
+                    <h>Direction : Please press the Play button to play the audio, and press the Record button to record your voice.</h><br><br>
+
                     <table>
 
                         <tr>

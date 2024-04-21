@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('../home/sky.jpg');
+    background-color: #f9bdbb;
+    /* background: url('../home/sky.jpg'); */
     margin: 0;
     padding: 0;
     background-attachment: fixed;

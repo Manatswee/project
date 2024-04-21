@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Passwords do not match";
         }
+        
 
         
         $conn->close();

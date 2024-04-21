@@ -14,13 +14,19 @@ h1 {
     color: #fff;
 }
 
+h {
+    color: #ff0000;
+    font-size: small;
+}
+
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     /* display: flex;*/
     align-items: center;
     justify-content: center;
-    background: url('../home/sky.jpg') no-repeat;
+    background-color: #f9bdbb;
+    /* background: url('../home/sky.jpg') no-repeat; */
     background-position: center;
     background-size: cover;
     margin-top: 30px;
@@ -96,7 +102,7 @@ body {
 
 .article-preview {
     padding: 24px;
-    height: 1250px;
+    height: 1290px;
     background: white;
 }
 

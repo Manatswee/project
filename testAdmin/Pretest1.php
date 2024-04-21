@@ -333,7 +333,7 @@
 
 
     </div>
-    <form action="../home/homeAdmin.html">
+    <form action="../home/homeAdmin.php">
         <button id="button1">Finish</button>
     </form>
     <br>

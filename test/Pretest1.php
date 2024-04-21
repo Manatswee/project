@@ -86,7 +86,7 @@ if (isset($_SESSION['email'])) {
 
                     
                     // URL ของ API
-                    const apiUrl_saveData = 'http://localhost/Projesct12/api/pretest';
+                    const apiUrl_saveData = 'http://localhost/Projesct15/api/pretest';
 
                     // ข้อมูลที่ต้องการบันทึก
                     const postData = {

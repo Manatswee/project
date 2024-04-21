@@ -23,7 +23,8 @@ body {
     /* display: flex;*/
     align-items: center;
     justify-content: center;
-    background: url('../home/sky.jpg') no-repeat;
+    background-color: #f9bdbb;
+    /* background: url('../home/sky.jpg') no-repeat; */
     background-position: center;
     background-size: cover;
     margin-top: 30px;
@@ -99,7 +100,7 @@ body {
 
 .article-preview {
     padding: 24px;
-    height: 1170px;
+    height: 1190px;
     background: white;
 }
 

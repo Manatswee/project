@@ -64,7 +64,7 @@ if (isset($_SESSION['email'])) {
                     <button id="positionB">Tourist</button>
 
                     <br><br>
-                    <h>*กดปุ่มครั้งที่ 1 เพื่อฟังเสียงคู่สนทนา กดปุ่มเดิม ครั้งที่ 2 เพื่อหยุดเสียงคู่สนทนา</h>
+                    <h>Direction : Please speak after the tone.</h>
 
                     <audio id="audioA" src="../../sound/U1Tourist.mp3"></audio>
                     <audio id="audioB" src="../../sound/U1Customer.mp3"></audio>

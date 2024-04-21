@@ -58,7 +58,7 @@ if (isset($_SESSION['email'])) {
 
             <script>
                 let name;
-                fetch('http://localhost/Projesct12/api/api-UserName', {
+                fetch('http://localhost/Projesct15/api/api-UserName', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ if (isset($_SESSION['email'])) {
         <nav class="navbar1">
             <br><br>
             <a href="../about/about.php">About</a>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Log out</a>
 
         </nav>
     </header>

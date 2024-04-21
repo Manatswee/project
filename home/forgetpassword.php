@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
 
         // URL ของ API
-        $url = 'http://localhost/Projesct12/api/api-user';
+        $url = 'http://localhost/Projesct15/api/api-user';
 
         // รับข้อมูล JSON จาก API
         $data = file_get_contents($url);

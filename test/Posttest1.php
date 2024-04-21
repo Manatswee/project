@@ -71,61 +71,66 @@ if (isset($_SESSION['email'])) {
                     return;
                 }
 
-                let score = 0;
-                const userAnswers = getUserAnswers();
+                if (!isSubmitted) {
+                    let score = 0;
+                    const userAnswers = getUserAnswers();
 
-                // ตรวจสอบคำตอบและคำนวณคะแนน
-                userAnswers.forEach((answer, index) => {
-                    if (answer === correctAnswers[index]) {
-                        score += 1;
+                    // ตรวจสอบคำตอบและคำนวณคะแนน
+                    userAnswers.forEach((answer, index) => {
+                        if (answer === correctAnswers[index]) {
+                            score += 1;
+                        }
+                    });
+
+                    // แสดงผลลัพธ์
+                    const resultContainer = document.getElementById('result');
+                    resultContainer.innerHTML = `<p>คะแนนของคุณ: ${score} / ${correctAnswers.length}</p>`;
+
+                    // แสดงปุ่ม "Finish"
+                    finishButton.style.display = 'block';
+
+                    // URL ของ API
+                    const apiUrl_saveData = 'http://localhost/Projesct15/api/posttest';
+
+                    // ข้อมูลที่ต้องการบันทึก
+                    const postData = {
+                    user_name : userData,  
+                    email : userEmail,
+                    score_posttest : score,
+                    };
+
+                    // ใช้ fetch() เพื่อทำการ POST ข้อมูล
+                    fetch(apiUrl_saveData, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(postData),
+                    })
+                    .then(response => {
+                        if (response.status === 201) {
+                        // กระบวนการบันทึกข้อมูลสำเร็จ
+                        console.log('Data saved successfully');
+                        return response.json();
+                        } else {
+                        // กระบวนการบันทึกข้อมูลไม่สำเร็จ
+                        throw new Error('Data not saved');
+                        }
+                    })
+                    .then(data => {
+                        // ดึงข้อมูลจากการบันทึกสำเร็จ
+                        console.log('Data:', data);
+                    })
+                    .catch(error => {
+                        // หากเกิดข้อผิดพลาดในการบันทึก
+                        console.error('Error saving data:', error);
+                    });
+
+                    // กำหนดให้มีการกด submit แล้ว
+                    isSubmitted = true;
                     }
-                });
-
-                // แสดงผลลัพธ์
-                const resultContainer = document.getElementById('result');
-                resultContainer.innerHTML = `<p>คะแนนของคุณ: ${score} / ${correctAnswers.length}</p>`;
-
                 // แสดงปุ่ม "Finish"
                 finishButton.style.display = 'block';
-
-                // URL ของ API
-                const apiUrl_saveData = 'http://localhost/Projesct12/api/posttest';
-
-                // ข้อมูลที่ต้องการบันทึก
-                const postData = {
-                user_name : userData,  
-                score_posttest : score,
-                };
-
-                // ใช้ fetch() เพื่อทำการ POST ข้อมูล
-                fetch(apiUrl_saveData, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(postData),
-                })
-                .then(response => {
-                    if (response.status === 201) {
-                    // กระบวนการบันทึกข้อมูลสำเร็จ
-                    console.log('Data saved successfully');
-                    return response.json();
-                    } else {
-                    // กระบวนการบันทึกข้อมูลไม่สำเร็จ
-                    throw new Error('Data not saved');
-                    }
-                })
-                .then(data => {
-                    // ดึงข้อมูลจากการบันทึกสำเร็จ
-                    console.log('Data:', data);
-                })
-                .catch(error => {
-                    // หากเกิดข้อผิดพลาดในการบันทึก
-                    console.error('Error saving data:', error);
-                });
-
-                // กำหนดให้มีการกด submit แล้ว
-                isSubmitted = true;
             });
 
             // ฟังก์ชันเพื่อตรวจสอบว่าทุกข้อถูกต้อง

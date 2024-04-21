@@ -42,7 +42,7 @@ if (isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <title>Web Application for Developing English Language Skills.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="homeAdmin.css">
 
     <header class="header">
         <nav class="navbar">
@@ -57,7 +57,7 @@ if (isset($_SESSION['email'])) {
         <nav class="navbar1">
             <br><br>
             <a href="../about/aboutAdmin.php">About</a>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Log out</a>
 
         </nav>
     </header>

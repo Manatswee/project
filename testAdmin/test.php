@@ -10,7 +10,7 @@
 
 <body>
     <h1><br>Test</h1>
-    <form action="../home/homeAdmin.html">
+    <form action="../home/homeAdmin.php">
         <div class="centering">
             <div class="articles">
                 <article>
@@ -22,7 +22,7 @@
                         <p>
                             Start taking tests before class.
 
-                            <br><br>(เริ่มทำแบบทดสอบก่อนเรียน)
+                            <!-- <br><br>(เริ่มทำแบบทดสอบก่อนเรียน) -->
 
                             <br><br>
                             <a href="Pretest1.php" class="read-more" title="แบบทดสอบก่อนเรียน">
@@ -40,7 +40,7 @@
                         <p>
                             Start taking the test after class.
 
-                            <br><br>(เริ่มทำแบบทดสอบหลังเรียน)
+                            <!-- <br><br>(เริ่มทำแบบทดสอบหลังเรียน) -->
 
 
                             <br><br>

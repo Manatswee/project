@@ -36,6 +36,7 @@ if (isset($_SESSION['email'])) {
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -57,36 +58,42 @@ if (isset($_SESSION['email'])) {
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-                <div class="slide-content">
-                    <div class="card-wrapper">
-                        <div class="card">
-                            <div class="image-content">
-                                <span class="overlay"></span>
-                                <div class="card-image">
-                                    <img src="../homeRecreational/recreational activities.jpg" alt="" class="card-img">
+                <form action="link.php">
+                    <div class="slide-content">
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image">
+                                        <img src="../homeRecreational/recreational activities.jpg" alt="" class="card-img">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="card-content">
-                                <form action="link.php">
+                                <div class="card-content">
+                                    <!-- <form action="link.php"> -->
                                     <h2 class="name">Recreational Activities</h2>
                                     <div class="description">
-                                        <br>
-                                        <p>Website
-                                            <br><a href="https://travel.kapook.com/view59280.html">ดำน้ำ พายคายัก ที่อุทยานแห่งชาติหมู่เกาะชุมพร</a>
-                                        </p>
+                                        <div class="container">
+                                            <div class="image1"><img src="../linkAdmin/Website2.jpg" alt="รูปภาพ 1">
+                                                <div class="overlay1"><a href="https://travel.kapook.com/view59280.html">Website</a></div>
+                                            </div>
 
-                                        <p>Facebook
-                                            <br><a href="https://www.facebook.com/hashtag/%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%A3">#กิจกรรมชุมพร</a>
-                                        </p>
+                                            <br>
+                                            <div class="image1"><img src="../linkAdmin/Facebook2.jpg" alt="รูปภาพ 2">
+                                                <div class="overlay1"><a href="https://www.facebook.com/ChangwatChumphon/?locale=th_TH">Facebook</a></div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <br><button>Back</button>
-                                </form>
-                            </div>
+                                    <!-- <br><button>Back</button> -->
+                                    <!-- </form> -->
+                                </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <br><button>Back</button>
+                </form>
             </div>
 
         </div>

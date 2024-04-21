@@ -14,9 +14,7 @@
         <div class="centering">
             <div class="articles">
                 <article>
-                    <figure>
-                        <img src="../about/about.jpg" alt="Preview">
-                    </figure>
+                <figure style="background-color: #fce4ec;"></figure>
                     <div class="article-preview">
                         <?php
                         session_start();
@@ -40,10 +38,11 @@
                                     $userData = $user_result->fetch_assoc();
                                     // Display user profile data
                                     
-                                    echo "<p><span style='font-weight: bold;'>Name :</span><br><br> " . $userData['Name'] . "</p>";
-                                    echo "<p><span style='font-weight: bold;'>Surname :</span><br><br> " . $userData['Last_Name'] . "</p>";
-                                    echo "<p><span style='font-weight: bold;'>E-mail Address :</span><br><br> " . $userData['Email'] . "</p>";
-                                    echo "<p><span style='font-weight: bold;'>Status :</span><br><br> " . $userData['Status'] . "</p>";
+                                    echo "<br><p><span style='font-weight: bold; margin-left: 150px;'>Name : </span>" . $userData['Name'] . "</p>";
+                                    echo "<br><p><span style='font-weight: bold; margin-left: 150px;'>Surname : </span>" . $userData['Last_Name'] . "</p>";
+                                    echo "<br><p><span style='font-weight: bold; margin-left: 150px;'>E-mail Address : </span>" . $userData['Email'] . "</p>";
+                                    echo "<br><p><span style='font-weight: bold; margin-left: 150px;'>Passwords : </span>" . $userData['Passwords'] . "</p>";
+                                    echo "<br><p><span style='font-weight: bold; margin-left: 150px;'>Degree/Occupation : </span>" . $userData['Status'] . "</p>";
 
                                     // You can display other user data as needed
 
@@ -66,7 +65,8 @@
                                         echo "<p><span style='font-weight: bold;'>Name :</span><br><br> " . $admin1Data['Name'] . "</p>";
                                         echo "<p><span style='font-weight: bold;'>Surname :</span><br><br> " . $admin1Data['Last_Name'] . "</p>";
                                         echo "<p><span style='font-weight: bold;'>E-mail Address :</span><br><br> " . $admin1Data['Email'] . "</p>";
-                                        echo "<p><span style='font-weight: bold;'>Status :</span><br><br> " . $admin1Data['Status'] . "</p>";
+                                        echo "<p><span style='font-weight: bold;'>Passwords :</span><br><br> " . $userData['Passwords'] . "</p>";
+                                        echo "<p><span style='font-weight: bold;'>Degree/Occupation :</span><br><br> " . $userData['Status'] . "</p>";
     
                                         // You can display other admin1 data as needed
                                     } else {
